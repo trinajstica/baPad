@@ -1,4 +1,4 @@
-![Screenshot](slika.png)
+<p style="text-align:center;"><img src="slika.png" alt="Zaslonski posnetek pomoči"></p>
 
 baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
 
