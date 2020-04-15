@@ -1,0 +1,24 @@
+program bapad;
+
+{$mode objfpc}{$H+}
+
+uses
+  {$IFDEF UNIX}
+  cthreads,
+  {$ENDIF}
+  Interfaces, // this includes the CT adLCL widgetset
+  Forms, mainunit, searchreplace, message, SourcePrinter
+  { you can add u nits after this };
+
+{$R *.res}
+
+begin
+  RequireDerivedFormResource:=True;
+  Application.Title:='baPad';
+  Application.Scaled:=True;
+  Application.Initialize;
+  Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TfrmSearchReplace, frmSearchReplace);
+  Application.CreateForm(TfrmMessage, frmMessage);
+  Application.Run;
+end.
