@@ -1,3 +1,5 @@
+![Screenshot](slika.png)
+
 baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
 
       - možnost odpiranja resnično velikih datotek
