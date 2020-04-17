@@ -1,15 +1,14 @@
 object MainForm: TMainForm
-  Left = 528
-  Height = 500
-  Top = 240
-  Width = 750
+  Left = 449
+  Height = 400
+  Top = 228
+  Width = 600
   ActiveControl = txt
   AllowDropFiles = True
-  ClientHeight = 500
-  ClientWidth = 750
-  Constraints.MinHeight = 500
-  Constraints.MinWidth = 750
-  DesignTimePPI = 120
+  ClientHeight = 400
+  ClientWidth = 600
+  Constraints.MinHeight = 400
+  Constraints.MinWidth = 600
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
@@ -18,161 +17,171 @@ object MainForm: TMainForm
   OnShow = FormShow
   Position = poScreenCenter
   SessionProperties = 'Height;Left;Top;txt.Font;Width'
-  LCLVersion = '7.0'
+  LCLVersion = '7.1'
   object Panel: TPanel
     Left = 1
-    Height = 48
+    Height = 38
     Top = 1
-    Width = 748
+    Width = 598
     Align = alTop
     BorderSpacing.Around = 1
     BevelInner = bvLowered
     BevelOuter = bvNone
-    ClientHeight = 48
-    ClientWidth = 748
+    ClientHeight = 38
+    ClientWidth = 598
+    ParentFont = False
     TabOrder = 1
     object btnSave: TButton
-      Left = 97
-      Height = 44
+      Left = 78
+      Height = 34
       Hint = 'Shrani datoteko (Ctrl+S).'
       Top = 1
-      Width = 94
+      Width = 75
       Align = alLeft
       BorderSpacing.Right = 2
       BorderSpacing.Bottom = 2
       Caption = '&Shrani'
       OnClick = btnSaveClick
+      ParentFont = False
       TabOrder = 1
     end
     object btnNew: TButton
-      Left = 193
-      Height = 44
+      Left = 155
+      Height = 34
       Hint = 'Nov dokument (Ctrl+N).'
       Top = 1
-      Width = 94
+      Width = 75
       Align = alLeft
       BorderSpacing.Right = 2
       BorderSpacing.Bottom = 2
       Caption = '&Nov'
       OnClick = btnNewClick
+      ParentFont = False
       TabOrder = 2
     end
     object btnCalc: TButton
-      Left = 289
-      Height = 44
+      Left = 232
+      Height = 34
       Hint = 'Izračun označene formule (Ctrl+L).'
       Top = 1
-      Width = 94
+      Width = 75
       Align = alLeft
       BorderSpacing.Right = 2
       BorderSpacing.Bottom = 2
       Caption = 'Izračun'
       OnClick = btnCalcClick
+      ParentFont = False
       TabOrder = 3
     end
     object btnFind: TButton
-      Left = 385
-      Height = 44
+      Left = 309
+      Height = 34
       Hint = 'Iskanje besedila (Ctrl+F / F3).'
       Top = 1
-      Width = 94
+      Width = 75
       Align = alLeft
       BorderSpacing.Right = 2
       BorderSpacing.Bottom = 2
       Caption = 'Iskanje'
       OnClick = btnFindClick
+      ParentFont = False
       TabOrder = 4
     end
     object btnDonate: TButton
-      Left = 651
-      Height = 44
+      Left = 520
+      Height = 34
       Hint = 'Donirajte za razvoj brezplačnega programja.'
       Top = 1
-      Width = 94
+      Width = 75
       Align = alRight
       BorderSpacing.Right = 2
       BorderSpacing.Bottom = 2
       Caption = 'Donacija'
       OnClick = btnDonateClick
+      ParentFont = False
       TabOrder = 7
     end
     object btnHelp: TButton
-      Left = 624
-      Height = 44
+      Left = 498
+      Height = 34
       Hint = 'Pomoč.'
       Top = 1
-      Width = 25
+      Width = 20
       Align = alRight
       BorderSpacing.Right = 2
       BorderSpacing.Bottom = 2
       Caption = '?'
       OnClick = btnHelpClick
+      ParentFont = False
       TabOrder = 6
     end
     object btnOpen: TButton
       Left = 1
-      Height = 44
+      Height = 34
       Top = 1
-      Width = 94
+      Width = 75
       Align = alLeft
       BorderSpacing.Right = 2
       BorderSpacing.Bottom = 2
       Caption = '&Odpri'
       OnClick = btnOpenClick
+      ParentFont = False
       TabOrder = 0
     end
     object btnKriptiranje: TPanel
-      Left = 481
-      Height = 44
+      Left = 386
+      Height = 34
       Top = 1
-      Width = 119
+      Width = 95
       Align = alLeft
       BorderSpacing.Right = 2
       BorderSpacing.Bottom = 2
       BevelInner = bvRaised
       BevelOuter = bvNone
-      ClientHeight = 44
-      ClientWidth = 119
-      Color = cl3DLight
+      ClientHeight = 34
+      ClientWidth = 95
       ParentColor = False
+      ParentFont = False
       TabOrder = 5
       object EncDec: TCheckBox
-        Left = 9
-        Height = 42
+        Left = 7
+        Height = 32
         Hint = 'Kriptiranje'#13#10'(uporabi Ctrl+R za ponovno nalaganja datoteke).'
         Top = 1
-        Width = 109
+        Width = 87
         Align = alClient
-        BorderSpacing.Left = 8
+        BorderSpacing.Left = 6
         Caption = 'Kriptiranje'
         OnChange = EncDecChange
+        ParentFont = False
         TabOrder = 0
       end
     end
   end
   object bar: TStatusBar
     Left = 0
-    Height = 29
-    Top = 471
-    Width = 750
+    Height = 23
+    Top = 377
+    Width = 600
     Panels = <    
       item
-        Width = 500
+        Width = 400
       end    
       item
         Alignment = taCenter
         Text = '1 : 1'
-        Width = 50
+        Width = 40
       end>
+    ParentFont = False
     SimplePanel = False
   end
   inline txt: TSynEdit
     Left = 0
-    Height = 421
-    Top = 50
-    Width = 750
+    Height = 337
+    Top = 40
+    Width = 600
     Align = alClient
-    Font.Height = -27
+    Font.Height = -22
     Font.Name = 'Courier New'
     Font.Pitch = fpFixed
     Font.Quality = fqNonAntialiased
@@ -183,7 +192,7 @@ object MainForm: TMainForm
     OnClick = txtClick
     OnKeyDown = txtKeyDown
     OnKeyUp = txtKeyUp
-    Gutter.Width = 71
+    Gutter.Width = 57
     Gutter.MouseActions = <>
     RightGutter.Width = 0
     RightGutter.MouseActions = <>
@@ -480,7 +489,7 @@ object MainForm: TMainForm
     OnChange = txtChange
     inline SynLeftGutterPartList1: TSynGutterPartList
       object SynGutterLineNumber1: TSynGutterLineNumber
-        Width = 33
+        Width = 27
         MouseActions = <>
         MarkupInfo.Background = clBtnFace
         MarkupInfo.Foreground = clNone
@@ -490,17 +499,17 @@ object MainForm: TMainForm
         LeadingZeros = False
       end
       object SynGutterMarks1: TSynGutterMarks
-        Width = 30
+        Width = 24
         MouseActions = <>
       end
       object SynGutterChanges1: TSynGutterChanges
-        Width = 5
+        Width = 4
         MouseActions = <>
         ModifiedColor = 59900
         SavedColor = clGreen
       end
       object SynGutterSeparator1: TSynGutterSeparator
-        Width = 3
+        Width = 2
         MouseActions = <>
         MarkupInfo.Background = clWhite
         MarkupInfo.Foreground = clGray
@@ -510,21 +519,21 @@ object MainForm: TMainForm
   object OpenDialog1: TOpenDialog
     Title = 'Odpri datoteko'
     Filter = 'Vse|*.*'
-    Left = 379
-    Top = 74
+    Left = 303
+    Top = 59
   end
   object SaveDialog1: TSaveDialog
     Title = 'Shrani datoteko'
-    Left = 424
-    Top = 76
+    Left = 339
+    Top = 61
   end
   object Parser1: TRLExpressionParser
-    Left = 472
-    Top = 76
+    Left = 378
+    Top = 61
   end
   object Standard: TActionList
-    Left = 379
-    Top = 119
+    Left = 303
+    Top = 95
     object actSave: TAction
       Caption = '&Save'
       OnExecute = btnSaveClick
@@ -619,33 +628,33 @@ object MainForm: TMainForm
     Algorithm = 'Rijndael'
     MaxKeySize = 256
     BlockSize = 128
-    Left = 472
-    Top = 119
+    Left = 378
+    Top = 95
   end
   object DCP_sha256_1: TDCP_sha256
     Id = 28
     Algorithm = 'SHA256'
     HashSize = 256
-    Left = 518
-    Top = 120
+    Left = 414
+    Top = 96
   end
   object NaloziObZagonu: TTimer
     Enabled = False
     Interval = 100
     OnTimer = NaloziObZagonuTimer
-    Left = 379
-    Top = 160
+    Left = 303
+    Top = 128
   end
   object storage: TIniPropStorage
     StoredValues = <>
     IniSection = 'NASTAVITVE'
-    Left = 424
-    Top = 119
+    Left = 339
+    Top = 95
   end
   object PopupMenu1: TPopupMenu
     OnPopup = PopupMenu1Popup
-    Left = 424
-    Top = 160
+    Left = 339
+    Top = 128
     object MenuItem1: TMenuItem
       Caption = 'Izreži'
       OnClick = MenuItem1Click
@@ -719,59 +728,59 @@ object MainForm: TMainForm
     end
   end
   object PrintDialog1: TPrintDialog
-    Left = 379
-    Top = 200
+    Left = 303
+    Top = 160
   end
   object SynPHPSyn1: TSynPHPSyn
     DefaultFilter = 'PHP Files (*.php,*.php3,*.phtml,*.inc)|*.php;*.php3;*.phtml;*.inc'
     Enabled = False
-    Left = 88
-    Top = 64
+    Left = 70
+    Top = 51
   end
   object SynPasSyn1: TSynPasSyn
     Enabled = False
     CompilerMode = pcmDelphi
     NestedComments = False
     TypeHelpers = True
-    Left = 127
-    Top = 64
+    Left = 102
+    Top = 51
   end
   object SynHTMLSyn1: TSynHTMLSyn
     DefaultFilter = 'HTML Document (*.htm,*.html)|*.htm;*.html'
     Enabled = False
-    Left = 168
-    Top = 64
+    Left = 134
+    Top = 51
   end
   object SynXMLSyn1: TSynXMLSyn
     DefaultFilter = 'XML Document (*.xml,*.xsd,*.xsl,*.xslt,*.dtd)|*.xml;*.xsd;*.xsl;*.xslt;*.dtd'
     Enabled = False
     WantBracesParsed = False
-    Left = 208
-    Top = 66
+    Left = 166
+    Top = 53
   end
   object SynSQLSyn1: TSynSQLSyn
     DefaultFilter = 'SQL Files (*.sql)|*.sql'
     Enabled = False
     SQLDialect = sqlSybase
-    Left = 248
-    Top = 64
+    Left = 198
+    Top = 51
   end
   object SynVBSyn1: TSynVBSyn
     Enabled = False
-    Left = 288
-    Top = 66
+    Left = 230
+    Top = 53
   end
   object SynBatSyn1: TSynBatSyn
     DefaultFilter = 'MS-DOS Batch Files (*.bat;*.cmd)|*.bat;*.cmd'
     Enabled = False
-    Left = 88
-    Top = 109
+    Left = 70
+    Top = 87
   end
   object SynIniSyn1: TSynIniSyn
     DefaultFilter = 'INI Files (*.ini)|*.ini'
     Enabled = False
-    Left = 127
-    Top = 112
+    Left = 102
+    Top = 90
   end
   object SynAnySyn1: TSynAnySyn
     Enabled = False
@@ -782,7 +791,7 @@ object MainForm: TMainForm
     Entity = False
     DollarVariables = False
     ActiveDot = False
-    Left = 88
-    Top = 152
+    Left = 70
+    Top = 122
   end
 end

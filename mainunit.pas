@@ -813,6 +813,9 @@ begin
     if not InputQuery('Geslo','Vpišite geslo',true,pw) then
     begin
       pw:='';EncDec.Checked:=False;
+    end else
+    begin
+      actReloadExecute(Sender);
     end;
   end else pw:='';
   Txt.SetFocus;
