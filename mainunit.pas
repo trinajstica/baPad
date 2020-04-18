@@ -543,7 +543,7 @@ begin
   'Iskanje - CTRL+F - Iskanje besedila. Iskanje poteka od kurzorja naprej.'+#13#10+
   'Prevedi označeno besedilo - besedilo prevedete na https://translate.google.com.'+#13#10+
   'F3 - Iskanje/nadaljujemo iskanje.'+#13#10+#13#10+
-  'Kriptiranje - V kolikor preberemo že zakodirano datoteko, moramo vključiti Kriptiranje, nato vpišemo geslo in ponovno preberemo (CTRL+R) naloženo datoteko, da se dekodira s trenutnim geslom. Geslo ostane aktivno dokler je vključeno Kriptiranje (tako lahko shranjujemo spremembe brez ponovnega vpisovanja gesla).'+#13#10+#13#10+
+  'Kriptiranje - V kolikor preberemo že zakodirano datoteko, moramo vključiti Kriptiranje, nato vpišemo geslo in ponovno preberemo (avtomatsko) naloženo datoteko, da se dekodira s trenutnim geslom. Geslo ostane aktivno dokler je vključeno Kriptiranje (tako lahko shranjujemo spremembe brez ponovnega vpisovanja gesla).'+#13#10+#13#10+
   'CTRL+H - Poišči in zamenjaj.'+#13#10+
   'CTRL+W - Zavijanje označenega besedila na 80 znakov na vrstico.'+#13#10+
   'CTRL+E - Odpri izbrani URL naslov.'+#13#10+
