@@ -220,55 +220,6 @@ begin
   end;
 end;
 
-// https://forum.lazarus.freepascal.org/index.php/topic,10886.msg54150.html#msg54150
-function MyWrapText(AText :string; MaxCol :integer): string;
-const
-  {$IFDEF WINDOWS}
-  NewLine = #13#10;
-  LastNewLineChar = #10;
-  {$ELSE}
-  NewLine = #13;
-  LastNewLineChar = #13;
-  {$ENDIF}
-var
-  i, j, n :integer;
-  s, ss :string;
-begin
-  Result := AText;
-  if Length(AText) <= MaxCol then Exit;
-  ss := '';
-  repeat
-    s := Copy2SymbDel(AText, LastNewLineChar);
-    s := Trim(s);
-    j := 0;
-    n := 0;
-    while j <= Length(s) do
-    begin
-      inc(j);
-      if (j mod MaxCol) = 0 then
-      begin
-        i := j;
-        while s[i] <> ' ' do
-          Dec(i);
-        if Pos(' ', s) > 0 then
-        begin
-          System.Insert(NewLine, s, i + 1);
-          Inc(n, Length(NewLine));
-          inc(j, 2);
-        end
-        else
-        begin
-          System.Insert(NewLine, s, j);
-          Inc(n, Length(NewLine));
-          inc(j, 2);
-        end;
-      end;
-    end;
-    ss := ss + s + NewLine;
-  until AText = '';
-  Result := ss;
-end;
-
 procedure LoadF(filename:string; var tmp:TSynEdit);
 var
   FS : TFileStream;
@@ -314,7 +265,6 @@ end;
 function MinimizeFileName(const AFileName:string; AMaxLen:integer) : string;
 
   procedure SplitPath(const APath:String; Parts: TStrings);
-  { Splits the provided path into constituent folder names }
   var
     i, j : Integer;
   begin
@@ -695,7 +645,7 @@ begin
   txt.lines.BeginUpdate;
   if txt.seltext<>'' then
   begin
-    txt.seltext:=MyWrapText(txt.seltext,80);
+    txt.seltext:=WrapText(txt.seltext, 80);
   end;
   txt.lines.EndUpdate;
   txt.SelStart:=loc;
