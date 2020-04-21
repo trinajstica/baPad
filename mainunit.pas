@@ -800,9 +800,9 @@ begin
   SynMarkup.MarkupInfo.FrameColor := clSilver;
   SynMarkup.MarkupInfo.Background := clGray;
 
-  SynMarkup.WaitTime := 100; // millisec
-  SynMarkup.Trim := True;     // no spaces, if using selection
-  SynMarkup.FullWord := True; // only full words If "Foo" is under caret, do not mark it in "FooBar"
+  SynMarkup.WaitTime := 100;
+  SynMarkup.Trim := True;
+  SynMarkup.FullWord := True;
   SynMarkup.IgnoreKeywords := False;
 
 end;
@@ -834,7 +834,6 @@ end;
 procedure TMainForm.MenuItem14Click(Sender: TObject);
 var MTo,MSubject:string;
 begin
-  //OpenURL('mailto:theo@test.com?subject=test&body=Hello World');
   if txt.text<>'' then
   begin
     if InputQuery('Za','Prejemnikov e-naslov:',MTo) then
