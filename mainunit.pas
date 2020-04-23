@@ -13,8 +13,9 @@ uses
   SynHighlighterPHP, SynCompletion, SynHighlighterPas, SynHighlighterHTML,
   SynHighlighterXML, SynHighlighterSQL, SynHighlighterVB, SynHighlighterBat,
   SynHighlighterIni, SynHighlighterMulti, SynHighlighterAny,
-  SynUniHighlighter, PrintersDlgs, Printers,
-  SourcePrinter;
+  SynUniHighlighter, PrintersDlgs, Printers, SourcePrinter;
+
+
 
 type
 
@@ -28,6 +29,7 @@ type
     actFontMinus: TAction;
     actFontReset: TAction;
     actEposta: TAction;
+    actTranslate: TAction;
     actStats: TAction;
     actPrint: TAction;
     actSort: TAction;
@@ -491,7 +493,7 @@ begin
   'Nov - CTRL+N - Izpraznimo urejevalnik in pripravimo za delo z novimi podatki.'+#13#10+
   'Izračun - CTRL+L - Izračunamo izbrano formulo, primer: 10+20'+#13#10+
   'Iskanje - CTRL+F - Iskanje besedila. Iskanje poteka od kurzorja naprej.'+#13#10+
-  'Prevedi označeno besedilo - besedilo prevedete na https://translate.google.com.'+#13#10+
+  'Prevedi - CTRL+G - označeno besedilo prevedete na https://translate.google.com.'+#13#10+
   'F3 - Iskanje/nadaljujemo iskanje.'+#13#10+#13#10+
   'Kriptiranje - V kolikor preberemo že zakodirano datoteko, moramo vključiti Kriptiranje, nato vpišemo geslo in ponovno preberemo (avtomatsko) naloženo datoteko, da se dekodira s trenutnim geslom. Geslo ostane aktivno dokler je vključeno Kriptiranje (tako lahko shranjujemo spremembe brez ponovnega vpisovanja gesla).'+#13#10+#13#10+
   'CTRL+H - Poišči in zamenjaj.'+#13#10+
@@ -826,8 +828,12 @@ begin
 end;
 
 procedure TMainForm.MenuItem13Click(Sender: TObject);
+var LTo:string;
 begin
-  OpenURL('https://translate.google.com/#view=home&op=translate&sl=auto&tl=sl&text='+EncodeURL(txt.SelText));
+  if InputQuery('Prevajanje','V jezik (en,sl,de,ipd.) :',LTo) then
+  begin
+    OpenURL('https://translate.google.com/#view=home&op=translate&sl=auto&tl='+LTo+'&text='+EncodeURL(txt.SelText));
+  end;
   Txt.SetFocus;
 end;
 

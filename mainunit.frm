@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 449
+  Left = 431
   Height = 400
-  Top = 228
+  Top = 192
   Width = 600
   ActiveControl = txt
   AllowDropFiles = True
@@ -622,6 +622,11 @@ object MainForm: TMainForm
       OnExecute = MenuItem14Click
       ShortCut = 16461
     end
+    object actTranslate: TAction
+      Caption = 'actTranslate'
+      OnExecute = MenuItem13Click
+      ShortCut = 16455
+    end
   end
   object DCP_rijndael1: TDCP_rijndael
     Id = 9
@@ -657,25 +662,29 @@ object MainForm: TMainForm
     Top = 128
     object MenuItem1: TMenuItem
       Caption = 'Izreži'
+      ShortCut = 16472
       OnClick = MenuItem1Click
     end
     object MenuItem2: TMenuItem
       Caption = 'Kopiraj'
+      ShortCut = 16451
       OnClick = MenuItem2Click
     end
     object MenuItem3: TMenuItem
       Caption = 'Prilepi'
+      ShortCut = 16470
       OnClick = MenuItem3Click
     end
     object MenuItem5: TMenuItem
       Caption = 'Izberi vse'
+      ShortCut = 16449
       OnClick = MenuItem5Click
     end
     object N1: TMenuItem
       Caption = '-'
     end
     object MenuItem6: TMenuItem
-      Caption = 'V velike črkem'
+      Caption = 'V velike črke'
       OnClick = MenuItem6Click
     end
     object MenuItem7: TMenuItem
@@ -686,11 +695,13 @@ object MainForm: TMainForm
       Caption = '-'
     end
     object MenuItem13: TMenuItem
-      Caption = 'Prevedi označeno besedilo'
+      Caption = 'Prevedi'
+      ShortCut = 16455
       OnClick = MenuItem13Click
     end
     object MenuItem14: TMenuItem
       Caption = 'E-pošta'
+      ShortCut = 16461
       OnClick = MenuItem14Click
     end
     object N2: TMenuItem
@@ -698,14 +709,17 @@ object MainForm: TMainForm
     end
     object MenuItem8: TMenuItem
       Caption = 'Odpri datoteko'
+      ShortCut = 24655
       OnClick = MenuItem8Click
     end
     object MenuItem9: TMenuItem
       Caption = 'Iskanje na spletu'
+      ShortCut = 24646
       OnClick = MenuItem9Click
     end
     object MenuItem11: TMenuItem
-      Caption = 'Odpri na spletu'
+      Caption = 'Odpri URL na spletu'
+      ShortCut = 16453
       OnClick = actUrlExecute
     end
     object N3: TMenuItem
@@ -713,10 +727,12 @@ object MainForm: TMainForm
     end
     object MenuItem4: TMenuItem
       Caption = 'Razvrsti izbrano'
+      ShortCut = 16468
       OnClick = actSortExecute
     end
     object MenuItem10: TMenuItem
       Caption = 'Izračunaj izbrano'
+      ShortCut = 16460
       OnClick = btnCalcClick
     end
     object N4: TMenuItem
@@ -724,6 +740,7 @@ object MainForm: TMainForm
     end
     object MenuItem12: TMenuItem
       Caption = 'Zavij označeno besedilo'
+      ShortCut = 16471
       OnClick = actWordWrapExecute
     end
   end
