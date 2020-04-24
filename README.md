@@ -21,8 +21,4 @@ baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
       - odpiranje in prepoznava vseh kodnih tabel, ki jih prepozna freepascal
       - izključno shranjevanje v UTF8
 
-Aplikacija je odprtokodna, nekatere rešitve nisem napisal sam, so temu
-primerno označene v izvorni kodi. Še veliko je prostora za različne
-spremembe in dodatke.
-
-Za prevajanje potrebujete (CodeTyphon Studio Ver 7) https://www.pilotlogic.com/sitejoom/index.php/downloads/category/14-codetyphon.html
+Aplikacija je odprtokodna. Za prevajanje potrebujete (CodeTyphon Studio Ver 7) https://www.pilotlogic.com/sitejoom/index.php/downloads/category/14-codetyphon.html
