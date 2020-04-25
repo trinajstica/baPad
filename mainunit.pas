@@ -516,7 +516,8 @@ begin
   'CTRL+T - Razvrščanje označenega besedila.'+#13#10+
   'CTRL+P - Tiskanje.'+#13#10+
   'CTRL+K - Statistika trenutne datoteke.'+#13#10+
-  'CTRL+M - Označeno besedilo pošljemo v privzet epoštni program.'
+  'CTRL+M - Označeno besedilo pošljemo v privzet epoštni program.'+#13#10+
+  'CTRL+povleci in spusti mapo - generira spisek vsebine.'
 
   );
   Txt.SetFocus;
