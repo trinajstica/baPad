@@ -116,6 +116,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDropFiles(Sender: TObject; const FileNames: array of string);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormResize(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure IskanjeMapChangeFolder(fullpath: string; info: TSearchRec);
@@ -848,7 +849,13 @@ end;
 procedure TMainForm.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-  if ssCtrl in Shift then ctrlondrop:=true else ctrlondrop:=false;
+  if ssCtrl in Shift then ctrlondrop:=true;
+end;
+
+procedure TMainForm.FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState
+  );
+begin
+  ctrlondrop:=false;
 end;
 
 procedure TMainForm.FormResize(Sender: TObject);
