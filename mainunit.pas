@@ -368,6 +368,7 @@ procedure TMainForm.LoadFile(s:string);
 var t:TSynEdit;
     ChrEnc:string;
 begin
+  IskanjeMap.Stop:=true;
   bar.Panels[0].Text:='Prebiram podatke ...';Application.ProcessMessages;
   {$IFDEF WINDOWS}
     if ExtractFileExt(s) = '.lnk' then
@@ -743,6 +744,7 @@ begin
   end;
   if ok then
   begin
+    IskanjeMap.Stop:=true;
     txt.Highlighter:=SynAnySyn1;
     Txt.Lines.Clear;
     changes:=False;
@@ -790,6 +792,7 @@ end;
 
 procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
+  IskanjeMap.Stop:=true;
   storage.Save;
 end;
 
@@ -873,12 +876,12 @@ end;
 
 procedure TMainForm.IskanjeMapChangeFolder(fullpath: string; info: TSearchRec);
 begin
-  try txt.Lines.Add(info.Name);except end;
+  try txt.Lines.Add(info.Name);changes:=True;except end;
 end;
 
 procedure TMainForm.IskanjeMapFileFind(fullpath: string; info: TSearchRec);
 begin
-  try txt.Lines.Add('  '+info.Name);except end;
+  try txt.Lines.Add('  '+info.Name);changes:=True;except end;
 end;
 
 procedure TMainForm.MenuItem13Click(Sender: TObject);
