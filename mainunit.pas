@@ -518,7 +518,7 @@ begin
   'CTRL+P - Tiskanje.'+#13#10+
   'CTRL+K - Statistika trenutne datoteke.'+#13#10+
   'CTRL+M - Označeno besedilo pošljemo v privzet epoštni program.'+#13#10+
-  'CTRL+povleci in spusti mapo - generira spisek vsebine.'
+  'CTRL + povleci in spusti mapo - Generira spisek vsebine.'
 
   );
   Txt.SetFocus;
