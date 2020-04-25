@@ -20,5 +20,6 @@ baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
       - odpiranje označenega url naslova (začenši s http ali https)
       - odpiranje in prepoznava vseh kodnih tabel, ki jih prepozna freepascal
       - izključno shranjevanje v UTF8
+      - povleci in spusti mapo v urejevalnik generira spisek vsebine mape
 
 Aplikacija je odprtokodna. Za prevajanje potrebujete (CodeTyphon Studio Ver 7) https://www.pilotlogic.com/sitejoom/index.php/downloads/category/14-codetyphon.html
