@@ -190,10 +190,8 @@ end;
 
 const
 {$IFDEF WINDOWS}
-  delimeter = '\';
   fi: string = '*.*';
 {$ELSE}
-  delimeter = '/';
   fi: string = '*';
 {$ENDIF}
 
@@ -835,10 +833,10 @@ begin
   begin
     if DirectoryExists(filenames[0],true) then
     begin
-      tmp:=filenames[0]+delimeter+fi;
+      tmp:=filenames[0]+PathDelim+fi;
     end else
     begin
-      tmp:=ExtractFileDir(filenames[0])+delimeter+fi;
+      tmp:=ExtractFileDir(filenames[0])+PathDelim+fi;
     end;
     ctrlondrop:=false;
     IskanjeMap.Stop:=true;
