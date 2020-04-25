@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 431
+  Left = 499
   Height = 400
-  Top = 192
+  Top = 204
   Width = 600
   ActiveControl = txt
   AllowDropFiles = True
@@ -9,10 +9,12 @@ object MainForm: TMainForm
   ClientWidth = 600
   Constraints.MinHeight = 400
   Constraints.MinWidth = 600
+  KeyPreview = True
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDropFiles = FormDropFiles
+  OnKeyDown = FormKeyDown
   OnResize = FormResize
   OnShow = FormShow
   Position = poScreenCenter
@@ -810,5 +812,11 @@ object MainForm: TMainForm
     ActiveDot = False
     Left = 70
     Top = 122
+  end
+  object IskanjeMap: TplFileSearch
+    OnFileFind = IskanjeMapFileFind
+    OnChangeFolder = IskanjeMapChangeFolder
+    Left = 304
+    Top = 200
   end
 end

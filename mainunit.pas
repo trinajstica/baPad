@@ -12,7 +12,7 @@ uses
   lconvencoding, syneditmarkuphighall, SynEditSearch, SynEditTypes,
   SynHighlighterPHP, SynCompletion, SynHighlighterPas, SynHighlighterHTML,
   SynHighlighterXML, SynHighlighterSQL, SynHighlighterVB, SynHighlighterBat,
-  SynHighlighterIni, SynHighlighterMulti, SynHighlighterAny,
+  SynHighlighterIni, SynHighlighterMulti, SynHighlighterAny, TplFileSearchUnit,
   SynUniHighlighter, PrintersDlgs, Printers, SourcePrinter;
 
 
@@ -67,6 +67,7 @@ type
     N2: TMenuItem;
     N1: TMenuItem;
     btnKriptiranje: TPanel;
+    IskanjeMap: TplFileSearch;
     PopupMenu1: TPopupMenu;
     PrintDialog1: TPrintDialog;
     storage: TIniPropStorage;
@@ -114,8 +115,11 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormDropFiles(Sender: TObject; const FileNames: array of string);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormResize(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure IskanjeMapChangeFolder(fullpath: string; info: TSearchRec);
+    procedure IskanjeMapFileFind(fullpath: string; info: TSearchRec);
     procedure MenuItem13Click(Sender: TObject);
     procedure MenuItem14Click(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
@@ -133,6 +137,7 @@ type
     procedure txtKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure txtKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
+    ctrlondrop: boolean;
     changes   : boolean;
     filename  : string;
     lastdir   : string;
@@ -155,7 +160,6 @@ implementation
 {$R *.frm}
 
 { TMainForm }
-
 
 {$IFDEF WINDOWS}
 // https://forum.lazarus.freepascal.org/index.php/topic,1709.msg225291.html#msg225291
@@ -181,6 +185,15 @@ begin
   psl.GetPath(@pResult, MAX_PATH, Data, SLGP_UNCPRIORITY);
   Result := StrPas(pResult);
 end;
+{$ENDIF}
+
+const
+{$IFDEF WINDOWS}
+  delimeter = '\';
+  fi: string = '*.*';
+{$ELSE}
+  delimeter = '/';
+  fi: string = '*';
 {$ENDIF}
 
 function FindInMemo(AMemo: TSynEdit; AString: String; StartPos: Integer): Integer;
@@ -459,7 +472,7 @@ begin
   OpenDialog1.InitialDir:=lastdir;
   if OpenDialog1.Execute then
   begin
-    LoadFile(OpenDialog1.FileName);
+    try LoadFile(OpenDialog1.FileName);except end;
   end;
   Txt.SetFocus;
 end;
@@ -562,7 +575,7 @@ procedure TMainForm.actReloadExecute(Sender: TObject);
 begin
   if filename<>'' then
   begin
-    LoadFile(FileName);
+    try LoadFile(FileName);except end;
   end else
   begin
     btnOpenClick(Sender);
@@ -811,8 +824,31 @@ end;
 
 procedure TMainForm.FormDropFiles(Sender: TObject;
   const FileNames: array of string);
+var tmp:string;
 begin
-  LoadFile(filenames[0]);
+  if ctrlondrop then
+  begin
+    if DirectoryExists(filenames[0],true) then
+    begin
+      tmp:=filenames[0]+delimeter+fi;
+    end else
+    begin
+      tmp:=ExtractFileDir(filenames[0])+delimeter+fi;
+    end;
+    ctrlondrop:=false;
+    IskanjeMap.Stop:=true;
+    IskanjeMap.SearchFile:=tmp;
+    IskanjeMap.Start;
+  end else
+  begin
+    try LoadFile(filenames[0]);except end;
+  end;
+end;
+
+procedure TMainForm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if ssCtrl in Shift then ctrlondrop:=true else ctrlondrop:=false;
 end;
 
 procedure TMainForm.FormResize(Sender: TObject);
@@ -825,6 +861,16 @@ begin
   storage.Restore;
   Application.ProcessMessages;
   NaloziObZagonu.Enabled:=true;
+end;
+
+procedure TMainForm.IskanjeMapChangeFolder(fullpath: string; info: TSearchRec);
+begin
+  try txt.Lines.Add(info.Name);except end;
+end;
+
+procedure TMainForm.IskanjeMapFileFind(fullpath: string; info: TSearchRec);
+begin
+  try txt.Lines.Add('  '+info.Name);except end;
 end;
 
 procedure TMainForm.MenuItem13Click(Sender: TObject);
@@ -889,7 +935,7 @@ begin
   OpenDialog1.InitialDir:=lastdir;
   if OpenDialog1.Execute then
   begin
-    LoadFile(OpenDialog1.FileName);
+    try LoadFile(OpenDialog1.FileName);except end;
   end;
   Txt.SetFocus;
 end;
@@ -908,7 +954,7 @@ begin
   if ParamCount > 0 then
   begin
     s := ParamStr(1);
-    LoadFile(s);
+    try LoadFile(s);except end;
   end;
 end;
 

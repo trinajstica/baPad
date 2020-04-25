@@ -54,7 +54,6 @@
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <Libraries Value="C:\codetyphon\binLibraries\x86_64-linux\"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <CodeGeneration>
@@ -86,6 +85,9 @@
       <FormatVersion Value="2"/>
     </RunParams>
     <RequiredPackages>
+      <Item>
+        <PackageName Value="pl_ExSystem"/>
+      </Item>
       <Item>
         <PackageName Value="lz_googleapi"/>
       </Item>
