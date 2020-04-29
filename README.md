@@ -22,4 +22,7 @@ baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
       - izključno shranjevanje v UTF8
       - CTRL + povleci in spusti mapo v urejevalnik generira spisek vsebine mape
 
+Izvršne datoteke za zagon na Win32, Win64 in Lin64 se nahajajo v bin mapi.
+
 Aplikacija je odprtokodna. Za prevajanje potrebujete (CodeTyphon Studio Ver 7) https://www.pilotlogic.com/sitejoom/index.php/downloads/category/14-codetyphon.html
+
