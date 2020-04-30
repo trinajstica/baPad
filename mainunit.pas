@@ -596,7 +596,7 @@ begin
     try
       txt.SelStart:=0;
       txt.Lines.beginupdate;
-      txt.SearchReplace(frmSearchReplace.edtPoisci.Text,frmSearchReplace.edtZamenjaj.Text,[ssoMatchCase,ssoWholeWord,ssoReplace,ssoReplaceAll]);
+      txt.SearchReplace(frmSearchReplace.edtPoisci.Text,frmSearchReplace.edtZamenjaj.Text,[ssoMatchCase,ssoReplace,ssoReplaceAll]);
       txt.Lines.endupdate;
     finally
       frmMessage.Close;
