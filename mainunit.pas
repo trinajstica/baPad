@@ -195,17 +195,6 @@ const
   fi: string = '*';
 {$ENDIF}
 
-function FindInMemo(AMemo: TSynEdit; AString: String; StartPos: Integer): Integer;
-begin
-  Result := PosEx(UpperCase(AString), UpperCase(AMemo.Text), StartPos);
-  if Result > 0 then
-  begin
-    AMemo.SelStart := Result;
-    AMemo.SelEnd := AMemo.SelStart + Length(AString);
-    AMemo.SetFocus;
-  end;
-end;
-
 function baEncrypt(pw:string; x:string):string;
 var
   c: TDCP_rijndael;
@@ -486,7 +475,7 @@ begin
     frmMessage.lblMessage.Caption:='*** TRENUTEK, IŠČEM ***';
     frmMessage.Show;Application.ProcessMessages;
     try
-      FindInMemo(txt, ss, txt.SelEnd);
+     txt.SearchReplace(ss,'',[]);
     finally
       frmMessage.Close;
     end;
@@ -528,7 +517,7 @@ begin
   begin
     frmMessage.lblMessage.Caption:='*** TRENUTEK, IŠČEM ***';
     frmMessage.Show;Application.ProcessMessages;
-    FindInMemo(txt, ss, txt.SelEnd);
+    txt.SearchReplace(ss,'',[]);
     frmMessage.Close;
   end else
   begin
@@ -596,7 +585,7 @@ begin
     try
       txt.SelStart:=0;
       txt.Lines.beginupdate;
-      txt.SearchReplace(frmSearchReplace.edtPoisci.Text,frmSearchReplace.edtZamenjaj.Text,[ssoMatchCase,ssoReplace,ssoReplaceAll]);
+      txt.SearchReplace(frmSearchReplace.edtPoisci.Text,frmSearchReplace.edtZamenjaj.Text,[ssoReplace,ssoReplaceAll]);
       txt.Lines.endupdate;
     finally
       frmMessage.Close;
