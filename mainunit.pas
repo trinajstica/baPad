@@ -357,6 +357,11 @@ var t:TSynEdit;
 begin
   IskanjeMap.Stop:=true;
   bar.Panels[0].Text:='Prebiram podatke ...';Application.ProcessMessages;
+  if ExtractFileExt(s) = '.lcked' then
+  begin
+    changes:=false; filename:=s;
+    EncDec.Checked:=true;
+  end;
   {$IFDEF WINDOWS}
     if ExtractFileExt(s) = '.lnk' then
     begin
@@ -566,9 +571,6 @@ begin
   if filename<>'' then
   begin
     try LoadFile(FileName);except end;
-  end else
-  begin
-    btnOpenClick(Sender);
   end;
   Txt.SetFocus;
 end;
