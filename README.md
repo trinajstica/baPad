@@ -21,6 +21,7 @@ baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
       - odpiranje in prepoznava vseh kodnih tabel, ki jih prepozna freepascal
       - izključno shranjevanje v UTF8
       - CTRL + povleci in spusti mapo v urejevalnik generira spisek vsebine mape
+      - odpiranje .lcked datotek z vpisom gesla
 
 Izvršne datoteke za zagon na Win32, Win64 in Lin64 se nahajajo v <a href="bin">bin</a> mapi.
 
