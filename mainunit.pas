@@ -634,14 +634,8 @@ begin
 end;
 
 procedure TMainForm.actUrlExecute(Sender: TObject);
-var tmp:string;
 begin
-  tmp:=trim(lowercase(txt.seltext));
-  if tmp='' then exit;
-  if (pos('https://',tmp)<>0) or (pos('http://',tmp)<>0) then
-  begin
-    OpenURL(tmp);
-  end;
+  OpenURL(txt.seltext);
   Txt.SetFocus;
 end;
 
