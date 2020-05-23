@@ -357,21 +357,7 @@ begin
   Result := sBuff;
 end;
 
-function isNumber(buff: string): boolean;
-begin
-  if buff = '' then
-  begin
-    Result := False;
-    exit;
-  end;
-  try
-    StrToInt(buff);
-    Result := True;
-  except
-    Result := False;
-  end;
-end;
-
+//https://forum.lazarus.freepascal.org/index.php?topic=14513.0
 function GetPassword(PasswordMask: string; pLength: integer): string;
 var
   Counter: integer;
