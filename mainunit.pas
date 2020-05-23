@@ -29,6 +29,7 @@ type
     actFontMinus: TAction;
     actFontReset: TAction;
     actEposta: TAction;
+    arcPassword: TAction;
     actTranslate: TAction;
     actStats: TAction;
     actPrint: TAction;
@@ -103,6 +104,7 @@ type
     procedure actStatsExecute(Sender: TObject);
     procedure actUrlExecute(Sender: TObject);
     procedure actWordWrapExecute(Sender: TObject);
+    procedure arcPasswordExecute(Sender: TObject);
     procedure btnDonateClick(Sender: TObject);
     procedure btnFindClick(Sender: TObject);
     procedure btnHelpClick(Sender: TObject);
@@ -150,11 +152,17 @@ type
 var
   MainForm: TMainForm;
   SynMarkup: TSynEditMarkupHighlightAllCaret;
+  rChar: integer;
 
 const version:string='baPad v1.0, © BArko, 2020';
       ss:string='';
       pw:string='';
       seltext:string='';
+
+      TLowerAlpha = 'abcdefghijklmnopqrstuvwxyz';
+      TUpperAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      TNumber = '0123456789';
+      TSpecial = '!?$?%^&*()_-+={[}]:;@~#|\<,>./';
 
 implementation
 
@@ -349,6 +357,36 @@ begin
   Result := sBuff;
 end;
 
+function isNumber(buff: string): boolean;
+begin
+  if buff = '' then
+  begin
+    Result := False;
+    exit;
+  end;
+  try
+    StrToInt(buff);
+    Result := True;
+  except
+    Result := False;
+  end;
+end;
+
+function GetPassword(PasswordMask: string; pLength: integer): string;
+var
+  Counter: integer;
+  rPass: string;
+begin
+  rPass := '';
+  for Counter := 1 to pLength do
+  begin
+    rChar := Random(Length(PasswordMask));
+    rPass := rPass + Copy(PasswordMask, rChar, 1);
+  end;
+  Result := rPass;
+end;
+
+
 // *** *** *** ****************************************
 
 procedure TMainForm.LoadFile(s:string);
@@ -510,7 +548,8 @@ begin
   'CTRL+P - Tiskanje.'+#13#10+
   'CTRL+K - Statistika trenutne datoteke.'+#13#10+
   'CTRL+M - Označeno besedilo pošljemo v privzet epoštni program.'+#13#10+
-  'CTRL + povleci in spusti mapo - Generira spisek vsebine.'
+  'CTRL + povleci in spusti mapo - Generira spisek vsebine.'+#13#10+
+  'CTRL+Q - Privzeto generira 12 (ali označeno številko 1 do 255) naključnih znakov.'
 
   );
   Txt.SetFocus;
@@ -651,6 +690,25 @@ begin
   txt.lines.EndUpdate;
   txt.SelStart:=loc;
   txt.SetFocus;
+end;
+
+procedure TMainForm.arcPasswordExecute(Sender: TObject);
+var t:byte;
+begin
+  if txt.SelText<>'' then
+  begin
+    try
+      t:=StrToInt(txt.SelText);
+    except
+      t:=12;
+    end;
+    if t>=255 then t:=255;
+    if t<1 then t:=1;
+    txt.SelText:=GetPassword(TUpperAlpha+TLowerAlpha+TNumber+TSpecial, t);
+  end
+  else begin
+    txt.SelText:=GetPassword(TUpperAlpha+TLowerAlpha+TNumber+TSpecial, 12);
+  end;
 end;
 
 procedure TMainForm.btnDonateClick(Sender: TObject);

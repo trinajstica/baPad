@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 488
+  Left = 476
   Height = 400
-  Top = 192
+  Top = 214
   Width = 600
   ActiveControl = txt
   AllowDropFiles = True
@@ -629,6 +629,11 @@ object MainForm: TMainForm
       Caption = 'actTranslate'
       OnExecute = MenuItem13Click
       ShortCut = 16455
+    end
+    object arcPassword: TAction
+      Caption = 'arcPassword'
+      OnExecute = arcPasswordExecute
+      ShortCut = 16465
     end
   end
   object DCP_rijndael1: TDCP_rijndael
