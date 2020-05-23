@@ -22,6 +22,7 @@ baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
       - izključno shranjevanje v UTF8
       - CTRL + povleci in spusti mapo v urejevalnik generira spisek vsebine mape
       - odpiranje .lcked datotek z vpisom gesla
+      - Generiranje naključnega gesla v dolžini 12 znakov ali poljubno izbrano (označeno) številko med 1 in 255.
 
 Izvršne datoteke za zagon na Win32, Win64 in Lin64 se nahajajo v <a href="bin">bin</a> mapi.
 
