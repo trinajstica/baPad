@@ -244,8 +244,10 @@ begin
 end;
 
 procedure WhereXY;
+var tmp:string;
 begin
-  mainform.bar.Panels[1].Text:=IntToStr(mainform.txt.CaretY)+' : '+IntToStr(mainform.txt.CaretX);
+  tmp:=trim(ConvertEncoding(mainform.txt.seltext,GuessEncoding(mainform.txt.seltext),EncodingAnsi));
+  mainform.bar.Panels[1].Text:='['+IntToStr(Length(tmp))+'] '+IntToStr(mainform.txt.CaretY)+' : '+IntToStr(mainform.txt.CaretX);
 end;
 
 procedure ResizeBar;

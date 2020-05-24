@@ -172,7 +172,7 @@ object MainForm: TMainForm
       end    
       item
         Alignment = taCenter
-        Text = '1 : 1'
+        Text = '[0] 1 : 1'
         Width = 40
       end>
     ParentFont = False
