@@ -13,7 +13,7 @@ uses
   SynHighlighterPHP, SynCompletion, SynHighlighterPas, SynHighlighterHTML,
   SynHighlighterXML, SynHighlighterSQL, SynHighlighterVB, SynHighlighterBat,
   SynHighlighterIni, SynHighlighterMulti, SynHighlighterAny, TplFileSearchUnit,
-  SynUniHighlighter, PrintersDlgs, Printers, SourcePrinter;
+  SynUniHighlighter, PrintersDlgs, Printers, SourcePrinter, PasswordUnit;
 
 
 
@@ -806,13 +806,15 @@ end;
 
 procedure TMainForm.EncDecChange(Sender: TObject);
 begin
+  frmPassword.edPassword.Text:='';
   if EncDec.Checked then
   begin
-    if not InputQuery('Geslo','Vpišite geslo',true,pw) then
+    if frmPassword.ShowModal=mrCancel then
     begin
       pw:='';EncDec.Checked:=False;
     end else
     begin
+      pw:=frmPassword.edPassword.Text;
       actReloadExecute(Sender);
     end;
   end else pw:='';

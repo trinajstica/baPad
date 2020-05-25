@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}
   Interfaces, // this includes the CT adLCL widgetset
-  Forms, mainunit, searchreplace, message, SourcePrinter
+  Forms, mainunit, searchreplace, message, SourcePrinter, passwordunit
   { you can add u nits after this };
 
 {$R *.res}
@@ -20,5 +20,6 @@ begin
   Application.CreateForm(TMainForm, MainForm);
   Application.CreateForm(TfrmSearchReplace, frmSearchReplace);
   Application.CreateForm(TfrmMessage, frmMessage);
+  Application.CreateForm(TfrmPassword, frmPassword);
   Application.Run;
 end.
