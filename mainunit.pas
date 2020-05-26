@@ -921,7 +921,7 @@ var LTo:string;
 begin
   if InputQuery2('Prevajanje','V jezik (en,sl,de,ipd.) :',LTo)=mrOk then
   begin
-    OpenURL('https://translate.google.com/?hl=sl&tab=TT#view=home&op=translate&sl=auto&tl='+LTo+'&text='+UrlEncode(txt.SelText));
+    OpenURL('https://translate.google.com/#view=home&op=translate&sl=auto&tl='+LTo+'&text='+UrlEncode(txt.SelText));
   end;
   Txt.SetFocus;
 end;
