@@ -24,7 +24,11 @@ baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
       - odpiranje .lcked datotek z vpisom gesla
       - generiranje naključnega gesla v dolžini 12 znakov ali poljubno izbrano (označeno) številko med 1 in 255.
 
-Izvršne datoteke za zagon na Win32, Win64 in Lin64 se nahajajo v <a href="bin">bin</a> mapi.
+Prenos izvršnih datotek:
+
+Za Windows 32 bit - <a href="bin/bapad32.exe">prenos</a>
+Za Windows 64 bit - <a href="bin/bapad64.exe">prenos</a>
+Za Linux 64 bit - <a href="bin/bapad64">prenos</a>
 
 Aplikacija je odprtokodna. Za prevajanje potrebujete (CodeTyphon Studio Ver 7) https://www.pilotlogic.com/sitejoom/index.php/downloads/category/14-codetyphon.html
 
