@@ -1,13 +1,13 @@
 object frmPassword: TfrmPassword
-  Left = 476
-  Height = 108
-  Top = 214
-  Width = 419
+  Left = 487
+  Height = 100
+  Top = 198
+  Width = 420
   ActiveControl = edPassword
   BorderStyle = bsDialog
   Caption = 'Geslo'
-  ClientHeight = 108
-  ClientWidth = 419
+  ClientHeight = 100
+  ClientWidth = 420
   OnShow = FormShow
   Position = poMainFormCenter
   ShowInTaskBar = stNever
@@ -24,16 +24,16 @@ object frmPassword: TfrmPassword
     Left = 8
     Height = 23
     Top = 32
-    Width = 400
+    Width = 401
     Anchors = [akTop, akLeft, akRight]
     EchoMode = emPassword
     PasswordChar = '*'
     TabOrder = 0
   end
   object btnOk: TButton
-    Left = 248
+    Left = 249
     Height = 25
-    Top = 72
+    Top = 64
     Width = 75
     Anchors = [akTop, akRight]
     Caption = 'V redu'
@@ -42,11 +42,12 @@ object frmPassword: TfrmPassword
     TabOrder = 1
   end
   object btnCancel: TButton
-    Left = 333
+    Left = 334
     Height = 25
-    Top = 72
+    Top = 64
     Width = 75
     Anchors = [akTop, akRight]
+    Cancel = True
     Caption = 'Prekliči'
     ModalResult = 2
     TabOrder = 2

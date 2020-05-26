@@ -13,7 +13,7 @@ uses
   SynHighlighterPHP, SynCompletion, SynHighlighterPas, SynHighlighterHTML,
   SynHighlighterXML, SynHighlighterSQL, SynHighlighterVB, SynHighlighterBat,
   SynHighlighterIni, SynHighlighterMulti, SynHighlighterAny, TplFileSearchUnit,
-  SynUniHighlighter, PrintersDlgs, Printers, SourcePrinter, PasswordUnit;
+  SynUniHighlighter, PrintersDlgs, Printers, SourcePrinter, PasswordUnit, dialogunit;
 
 
 
@@ -145,6 +145,7 @@ type
     filename  : string;
     lastdir   : string;
     procedure LoadFile(s:string);
+    function InputQuery2(frmCaption,frmText:string; var frmIO:string):integer;
   public
 
   end;
@@ -336,27 +337,18 @@ begin
   end;
 end;
 
-//https://forum.lazarus.freepascal.org/index.php?topic=15088.0
-function EncodeUrl(url: string): string;
+//https://rosettacode.org/wiki/URL_encoding#Free_Pascal
+function urlEncode(data: string): AnsiString;
 var
-  x: integer;
-  sBuff: string;
-const
-  SafeMask = ['A'..'Z', '0'..'9', 'a'..'z', '*', '@', '.', '_', '-'];
+  ch: AnsiChar;
 begin
-  sBuff := '';
-  for x := 1 to Length(url) do
-  begin
-    if url[x] in SafeMask then begin
-      sBuff := sBuff + url[x];
-    end else if url[x] = ' ' then begin
-      sBuff := sBuff + '+';
-    end else begin
-      sBuff := sBuff + '%' + IntToHex(Ord(url[x]), 2);
-    end;
+  Result := '';
+  for ch in data do begin
+    if ((Ord(ch) < 65) or (Ord(ch) > 90)) and ((Ord(ch) < 97) or (Ord(ch) > 122)) then begin
+      Result := Result + '%' + IntToHex(Ord(ch), 2);
+    end else
+      Result := Result + ch;
   end;
-
-  Result := sBuff;
 end;
 
 //https://forum.lazarus.freepascal.org/index.php?topic=14513.0
@@ -374,6 +366,14 @@ begin
   Result := rPass;
 end;
 
+function TMainForm.InputQuery2(frmCaption,frmText:string; var frmIO:string):integer;
+begin
+  frmDialog.Caption:=frmCaption;
+  frmDialog.lblText.caption:=frmText;
+  frmDialog.edText.Text:=frmIO;
+  result:=frmDialog.ShowModal;
+  frmIO:=frmDialog.edText.Text;
+end;
 
 // *** *** *** ****************************************
 
@@ -500,8 +500,9 @@ end;
 procedure TMainForm.btnFindClick(Sender: TObject);
 begin
   if txt.seltext<>'' then ss:=txt.SelText;
-  if InputQuery('Iskanje (CTRL+H poišči in zamenjaj)','Iskano besedilo',ss) then
+  if InputQuery2('Iskanje (CTRL+H poišči in zamenjaj)','Iskano besedilo',ss)=mrOk then
   begin
+    ss:=frmDialog.edText.Text;
     if ss<>seltext then seltext:='';
     frmMessage.lblMessage.Caption:='*** TRENUTEK, IŠČEM ***';
     frmMessage.Show;Application.ProcessMessages;
@@ -918,9 +919,9 @@ end;
 procedure TMainForm.MenuItem13Click(Sender: TObject);
 var LTo:string;
 begin
-  if InputQuery('Prevajanje','V jezik (en,sl,de,ipd.) :',LTo) then
+  if InputQuery2('Prevajanje','V jezik (en,sl,de,ipd.) :',LTo)=mrOk then
   begin
-    OpenURL('https://translate.google.com/#view=home&op=translate&sl=auto&tl='+LTo+'&text='+EncodeURL(txt.SelText));
+    OpenURL('https://translate.google.com/?hl=sl&tab=TT#view=home&op=translate&sl=auto&tl='+LTo+'&text='+UrlEncode(txt.SelText));
   end;
   Txt.SetFocus;
 end;
@@ -928,13 +929,13 @@ end;
 procedure TMainForm.MenuItem14Click(Sender: TObject);
 var MTo,MSubject:string;
 begin
-  if txt.text<>'' then
+  if txt.seltext<>'' then
   begin
-    if InputQuery('Za','Prejemnikov e-naslov:',MTo) then
+    if InputQuery2('Za','Prejemnikov e-naslov:',MTo)=mrOk then
     begin
-       if InputQuery('Tema','Tema sporočila:',MSubject) then
+       if InputQuery2('Tema','Tema sporočila:',MSubject)=mrOk then
        begin
-         OpenURL('mailto:'+MTo+'?subject='+MSubject+'&body='+txt.text);
+         OpenURL('mailto:'+MTo+'?subject='+urlEncode(MSubject)+'&body='+urlEncode(txt.SelText));
        end;
     end;
   end;
