@@ -10,7 +10,7 @@ baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
       - pošiljanje označenega besedila v epoštni program
       - hitro iskanje in zamenjava besedila
       - hitro označevanje enakih besed
-      - zavijanje označenega besesedila na dolžini 80 znakov
+      - zavijanje/odvijanje označenega besesedila na dolžini 80 znakov
       - razvrščanje označenega besedila od a do ž
       - iskanje označenega besedila preko duckduckgo
       - sprememba v označenem besedilu iz malih v velike črke in obratno
