@@ -29,6 +29,7 @@ type
     actFontMinus: TAction;
     actFontReset: TAction;
     actEposta: TAction;
+    actWordUnWrap: TAction;
     arcPassword: TAction;
     actTranslate: TAction;
     actStats: TAction;
@@ -103,6 +104,7 @@ type
     procedure actSortExecute(Sender: TObject);
     procedure actStatsExecute(Sender: TObject);
     procedure actUrlExecute(Sender: TObject);
+    procedure actWordUnWrapExecute(Sender: TObject);
     procedure actWordWrapExecute(Sender: TObject);
     procedure arcPasswordExecute(Sender: TObject);
     procedure btnDonateClick(Sender: TObject);
@@ -532,6 +534,7 @@ begin
   'Kriptiranje - V kolikor preberemo že zakodirano datoteko, moramo vključiti Kriptiranje, nato vpišemo geslo in ponovno preberemo (avtomatsko) naloženo datoteko, da se dekodira s trenutnim geslom. Geslo ostane aktivno dokler je vključeno Kriptiranje (tako lahko shranjujemo spremembe brez ponovnega vpisovanja gesla).'+#13#10+#13#10+
   'CTRL+H - Poišči in zamenjaj.'+#13#10+
   'CTRL+W - Zavijanje označenega besedila na 80 znakov na vrstico.'+#13#10+
+  'CTRL+ALT+W - Odvijanje označenega besedila.'+#13#10+
   'CTRL+E - Odpri izbrani URL naslov.'+#13#10+
   'CTRL+T - Razvrščanje označenega besedila.'+#13#10+
   'CTRL+P - Tiskanje.'+#13#10+
@@ -667,6 +670,28 @@ begin
   Txt.SetFocus;
 end;
 
+procedure TMainForm.actWordUnWrapExecute(Sender: TObject);
+var s:tstringlist;
+    tmp:string;
+    i:integer;
+begin
+  if txt.SelText<>'' then
+  begin
+    txt.lines.BeginUpdate;
+    s:=TStringlist.Create;
+    s.text:=txt.SelText;
+    tmp:='';
+    for i:=0 to s.Count-1 do
+    begin
+      tmp:=tmp+s[i]+' ';
+    end;
+    s.Free;
+    txt.SelText:=trim(tmp);
+    txt.Lines.EndUpdate;
+  end;
+  txt.SetFocus;
+end;
+
 procedure TMainForm.actWordWrapExecute(Sender: TObject);
 var loc:integer;
 begin
@@ -674,7 +699,7 @@ begin
   txt.lines.BeginUpdate;
   if txt.seltext<>'' then
   begin
-    txt.seltext:=WrapText(txt.seltext, 80);
+    txt.seltext:=WrapText(txt.seltext, 75);
   end;
   txt.lines.EndUpdate;
   txt.SelStart:=loc;
