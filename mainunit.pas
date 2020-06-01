@@ -258,18 +258,6 @@ begin
   mainform.bar.Panels[0].Width:=mainform.Width-200;
 end;
 
-function OrigPath:String;
-var tmp:string;
-begin
-  tmp:=ExpandFileName(paramstr(0));
-  tmp:=ExtractFileDir(tmp);
-  if tmp[length(tmp)]<>PathDelim then
-  begin
-    tmp:=tmp+PathDelim;
-  end;
-  result:=tmp;
-end;
-
 function GuessFEncoding(s:string):string;
 var rez:string;
 begin
@@ -868,9 +856,8 @@ end;
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
   caption:=version;
-  storage.IniFileName:=OrigPath+'bapad.ini';
+  storage.IniFileName:=ChangeFileExt(paramstr(0),'.ini');
   ResizeBar;
-
 
   SynMarkup := TSynEditMarkupHighlightAllCaret(txt.MarkupByClass[TSynEditMarkupHighlightAllCaret]);
 
