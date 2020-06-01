@@ -757,6 +757,11 @@ object MainForm: TMainForm
       ShortCut = 16471
       OnClick = actWordWrapExecute
     end
+    object MenuItem15: TMenuItem
+      Caption = 'Odvij označeno besedilo'
+      ShortCut = 49239
+      OnClick = actWordUnWrapExecute
+    end
   end
   object PrintDialog1: TPrintDialog
     Left = 379

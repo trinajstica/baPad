@@ -55,6 +55,7 @@ type
     MenuItem12: TMenuItem;
     MenuItem13: TMenuItem;
     MenuItem14: TMenuItem;
+    MenuItem15: TMenuItem;
     N5: TMenuItem;
     N4: TMenuItem;
     MenuItem2: TMenuItem;
@@ -1029,6 +1030,7 @@ begin
     menuitem12.enabled:=true;
     menuitem13.enabled:=true;
     menuItem14.enabled:=true;
+    menuItem15.enabled:=true;
   end else
   begin
     menuitem1.Enabled:=false;
@@ -1043,6 +1045,7 @@ begin
     menuitem12.enabled:=false;
     menuitem13.enabled:=false;
     menuItem14.enabled:=false;
+    menuItem15.enabled:=false;
   end;
 end;
 
