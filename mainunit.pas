@@ -56,6 +56,8 @@ type
     MenuItem13: TMenuItem;
     MenuItem14: TMenuItem;
     MenuItem15: TMenuItem;
+    MenuItem16: TMenuItem;
+    MenuItem17: TMenuItem;
     N5: TMenuItem;
     N4: TMenuItem;
     MenuItem2: TMenuItem;
@@ -128,6 +130,7 @@ type
     procedure IskanjeMapFileFind(fullpath: string; info: TSearchRec);
     procedure MenuItem13Click(Sender: TObject);
     procedure MenuItem14Click(Sender: TObject);
+    procedure MenuItem16Click(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
@@ -147,6 +150,7 @@ type
     changes   : boolean;
     filename  : string;
     lastdir   : string;
+    const ShraniKot : boolean = false;
     procedure LoadFile(s:string);
     function InputQuery2(frmCaption,frmText:string; var frmIO:string):integer;
   public
@@ -727,8 +731,9 @@ begin
   bar.Panels[0].Text:='Shranjujem podatke ...';Application.ProcessMessages;
   SaveDialog1.FileName:=filename;ok:=false;
   SaveDialog1.InitialDir:=lastdir;
-  if filename='' then
+  if (filename='') or ShraniKot then
   begin
+    ShraniKot:=false;
     if SaveDialog1.Execute then
     begin
       if ExtractFileExt(SaveDialog1.FileName) = '.lcked' then
@@ -957,6 +962,11 @@ begin
     end;
   end;
   Txt.SetFocus;
+end;
+
+procedure TMainForm.MenuItem16Click(Sender: TObject);
+begin
+  ShraniKot:=true;btnSaveClick(sender);
 end;
 
 procedure TMainForm.MenuItem1Click(Sender: TObject);

@@ -675,6 +675,13 @@ object MainForm: TMainForm
     OnPopup = PopupMenu1Popup
     Left = 416
     Top = 160
+    object MenuItem16: TMenuItem
+      Caption = 'Shrani kot'
+      OnClick = MenuItem16Click
+    end
+    object MenuItem17: TMenuItem
+      Caption = '-'
+    end
     object MenuItem1: TMenuItem
       Caption = 'Izreži'
       ShortCut = 16472
