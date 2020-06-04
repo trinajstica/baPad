@@ -19,6 +19,7 @@ type
     lblPoisci: TLabel;
     lblZamenjaj: TLabel;
     procedure btnCloseClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -37,6 +38,12 @@ implementation
 procedure TfrmSearchReplace.btnCloseClick(Sender: TObject);
 begin
   close;
+end;
+
+procedure TfrmSearchReplace.FormShow(Sender: TObject);
+begin
+  edtPoisci.SetFocus;
+  edtPoisci.SelectAll;
 end;
 
 end.

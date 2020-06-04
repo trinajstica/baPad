@@ -1,5 +1,5 @@
 object MainForm: TMainForm
-  Left = 449
+  Left = 467
   Height = 500
   Top = 238
   Width = 750
@@ -528,12 +528,12 @@ object MainForm: TMainForm
   end
   object SaveDialog1: TSaveDialog
     Title = 'Shrani datoteko'
-    Left = 424
-    Top = 76
+    Left = 416
+    Top = 74
   end
   object Parser1: TRLExpressionParser
-    Left = 473
-    Top = 76
+    Left = 456
+    Top = 74
   end
   object Standard: TActionList
     Left = 379
@@ -647,15 +647,15 @@ object MainForm: TMainForm
     Algorithm = 'Rijndael'
     MaxKeySize = 256
     BlockSize = 128
-    Left = 473
+    Left = 456
     Top = 119
   end
   object DCP_sha256_1: TDCP_sha256
     Id = 28
     Algorithm = 'SHA256'
     HashSize = 256
-    Left = 518
-    Top = 120
+    Left = 456
+    Top = 160
   end
   object NaloziObZagonu: TTimer
     Enabled = False
@@ -667,12 +667,12 @@ object MainForm: TMainForm
   object storage: TIniPropStorage
     StoredValues = <>
     IniSection = 'NASTAVITVE'
-    Left = 424
+    Left = 416
     Top = 119
   end
   object PopupMenu1: TPopupMenu
     OnPopup = PopupMenu1Popup
-    Left = 424
+    Left = 416
     Top = 160
     object MenuItem1: TMenuItem
       Caption = 'Izreži'
@@ -792,7 +792,7 @@ object MainForm: TMainForm
     Enabled = False
     WantBracesParsed = False
     Left = 208
-    Top = 66
+    Top = 64
   end
   object SynSQLSyn1: TSynSQLSyn
     DefaultFilter = 'SQL Files (*.sql)|*.sql'
@@ -804,7 +804,7 @@ object MainForm: TMainForm
   object SynVBSyn1: TSynVBSyn
     Enabled = False
     Left = 288
-    Top = 66
+    Top = 64
   end
   object SynBatSyn1: TSynBatSyn
     DefaultFilter = 'MS-DOS Batch Files (*.bat;*.cmd)|*.bat;*.cmd'
@@ -816,7 +816,7 @@ object MainForm: TMainForm
     DefaultFilter = 'INI Files (*.ini)|*.ini'
     Enabled = False
     Left = 128
-    Top = 113
+    Top = 109
   end
   object SynAnySyn1: TSynAnySyn
     Enabled = False
@@ -833,7 +833,7 @@ object MainForm: TMainForm
   object IskanjeMap: TplFileSearch
     OnFileFind = IskanjeMapFileFind
     OnChangeFolder = IskanjeMapChangeFolder
-    Left = 380
-    Top = 250
+    Left = 416
+    Top = 200
   end
 end

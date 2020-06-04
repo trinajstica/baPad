@@ -16,6 +16,7 @@ type
     btnOk: TButton;
     edText: TEdit;
     lblText: TLabel;
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -28,6 +29,14 @@ var
 implementation
 
 {$R *.frm}
+
+{ TfrmDialog }
+
+procedure TfrmDialog.FormShow(Sender: TObject);
+begin
+  edText.SetFocus;
+  edText.SelectAll;
+end;
 
 end.
 

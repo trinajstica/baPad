@@ -1,17 +1,19 @@
 object frmSearchReplace: TfrmSearchReplace
-  Left = 558
+  Left = 464
   Height = 177
-  Top = 255
+  Top = 248
   Width = 350
   ActiveControl = edtPoisci
+  BorderStyle = bsDialog
   Caption = 'Poišči in zamenjaj'
   ClientHeight = 177
   ClientWidth = 350
   Constraints.MinHeight = 177
   Constraints.MinWidth = 350
   DesignTimePPI = 120
+  OnShow = FormShow
   Position = poOwnerFormCenter
-  LCLVersion = '7.0'
+  LCLVersion = '7.1'
   object lblPoisci: TLabel
     Left = 8
     Height = 20
