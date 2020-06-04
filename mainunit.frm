@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 467
+  Left = 464
   Height = 500
-  Top = 238
+  Top = 248
   Width = 750
   ActiveControl = txt
   AllowDropFiles = True
@@ -522,14 +522,15 @@ object MainForm: TMainForm
   end
   object OpenDialog1: TOpenDialog
     Title = 'Odpri datoteko'
-    Filter = 'Vse|*.*'
+    Filter = 'Vse datoteke|*.*|LCKED datoteke|*.lcked'
     Left = 379
     Top = 74
   end
   object SaveDialog1: TSaveDialog
     Title = 'Shrani datoteko'
+    Filter = 'Vse datoteke|*.*|LCKED datoteke|*.lcked'
     Left = 416
-    Top = 74
+    Top = 72
   end
   object Parser1: TRLExpressionParser
     Left = 456
@@ -537,7 +538,7 @@ object MainForm: TMainForm
   end
   object Standard: TActionList
     Left = 379
-    Top = 119
+    Top = 120
     object actSave: TAction
       Caption = '&Save'
       OnExecute = btnSaveClick

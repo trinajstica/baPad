@@ -731,6 +731,10 @@ begin
   begin
     if SaveDialog1.Execute then
     begin
+      if ExtractFileExt(SaveDialog1.FileName) = '.lcked' then
+      begin
+        EncDec.Checked:=true;
+      end;
       if EncDec.Checked then
       begin
         try t:=TSynEdit.Create(self);
