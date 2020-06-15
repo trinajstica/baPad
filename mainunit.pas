@@ -144,6 +144,7 @@ type
     procedure TxtChange(Sender: TObject);
     procedure txtClick(Sender: TObject);
     procedure txtKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure txtKeyPress(Sender: TObject; var Key: char);
     procedure txtKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     ctrlondrop: boolean;
@@ -1065,7 +1066,6 @@ end;
 
 procedure TMainForm.TxtChange(Sender: TObject);
 begin
-
   changes:=True;
   bar.Panels[0].Text:=MinimizeFileName(filename,80)+' *** [Ni shranjeno]';
   WhereXY;
@@ -1080,6 +1080,38 @@ procedure TMainForm.txtKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   WhereXY;
+end;
+
+procedure TMainForm.txtKeyPress(Sender: TObject; var Key: char);
+var tmp:string;
+begin
+   tmp:=txt.SelText;
+   case key of
+     '(': begin
+            txt.SelText:='('+tmp+')';key:=#00;
+          end;
+     ')': begin
+            txt.SelText:='('+tmp+')';key:=#00;
+          end;
+     '[': begin
+            txt.SelText:='['+tmp+']';key:=#00;
+          end;
+     ']': begin
+            txt.SelText:='['+tmp+']';key:=#00;
+          end;
+     '{': begin
+            txt.SelText:='{'+tmp+'}';key:=#00;
+          end;
+     '}': begin
+            txt.SelText:='{'+tmp+'}';key:=#00;
+          end;
+     '"': begin
+            txt.SelText:='"'+tmp+'"';key:=#00;
+          end;
+     '''': begin
+            txt.SelText:=''''+tmp+'''';key:=#00;
+          end;
+   end;
 end;
 
 procedure TMainForm.txtKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState
