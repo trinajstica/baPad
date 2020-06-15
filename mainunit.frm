@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 464
+  Left = 449
   Height = 500
-  Top = 248
+  Top = 238
   Width = 750
   ActiveControl = txt
   AllowDropFiles = True
@@ -195,6 +195,7 @@ object MainForm: TMainForm
     TabOrder = 0
     OnClick = txtClick
     OnKeyDown = txtKeyDown
+    OnKeyPress = txtKeyPress
     OnKeyUp = txtKeyUp
     Gutter.Width = 73
     Gutter.MouseActions = <>
@@ -538,7 +539,7 @@ object MainForm: TMainForm
   end
   object Standard: TActionList
     Left = 379
-    Top = 120
+    Top = 119
     object actSave: TAction
       Caption = '&Save'
       OnExecute = btnSaveClick

@@ -195,7 +195,7 @@
       </Unit>
       <Unit>
         <Filename Value="passwordunit.pas"/>
-        <FRMtype Value="0"/>
+        <FRMtype Value="200"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmPassword"/>
         <HasResources Value="True"/>
@@ -203,7 +203,7 @@
       </Unit>
       <Unit>
         <Filename Value="dialogunit.pas"/>
-        <FRMtype Value="0"/>
+        <FRMtype Value="200"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmDialog"/>
         <HasResources Value="True"/>
