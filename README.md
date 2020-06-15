@@ -23,6 +23,7 @@ baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
       - CTRL + povleci in spusti mapo v urejevalnik generira spisek vsebine mape
       - odpiranje .lcked datotek z vpisom gesla
       - generiranje naključnega gesla v dolžini 12 znakov ali poljubno izbrano (označeno) številko med 1 in 255.
+      - označene dele besedila lahko s pritiskom na ", [, ], {, }, (, ) in ' okvirimo
 
 Prenos izvršnih datotek:
 
