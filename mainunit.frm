@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 449
+  Left = 378
   Height = 500
-  Top = 238
+  Top = 249
   Width = 750
   ActiveControl = txt
   AllowDropFiles = True
@@ -492,6 +492,7 @@ object MainForm: TMainForm
     LineHighlightColor.Background = clNone
     LineHighlightColor.Foreground = clNone
     OnChange = txtChange
+    OnGutterClick = txtGutterClick
     inline SynLeftGutterPartList1: TSynGutterPartList
       object SynGutterLineNumber1: TSynGutterLineNumber
         Width = 35
@@ -643,6 +644,11 @@ object MainForm: TMainForm
       OnExecute = actWordUnWrapExecute
       ShortCut = 49239
     end
+    object actRemoveDupes: TAction
+      Caption = 'actRemoveDupes'
+      OnExecute = actRemoveDupesExecute
+      ShortCut = 16452
+    end
   end
   object DCP_rijndael1: TDCP_rijndael
     Id = 9
@@ -752,6 +758,11 @@ object MainForm: TMainForm
       Caption = 'Razvrsti izbrano'
       ShortCut = 16468
       OnClick = actSortExecute
+    end
+    object MenuItem18: TMenuItem
+      Caption = 'Odstrani dvojnike'
+      ShortCut = 16452
+      OnClick = actRemoveDupesExecute
     end
     object MenuItem10: TMenuItem
       Caption = 'Izračunaj izbrano'

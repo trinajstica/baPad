@@ -13,7 +13,7 @@ uses
   SynHighlighterPHP, SynCompletion, SynHighlighterPas, SynHighlighterHTML,
   SynHighlighterXML, SynHighlighterSQL, SynHighlighterVB, SynHighlighterBat,
   SynHighlighterIni, SynHighlighterMulti, SynHighlighterAny, TplFileSearchUnit,
-  SynUniHighlighter, PrintersDlgs, Printers, SourcePrinter, PasswordUnit, dialogunit;
+  SynUniHighlighter, PrintersDlgs, Printers, SourcePrinter, PasswordUnit, dialogunit, SynGutterBase, SynEditMarks;
 
 
 
@@ -29,6 +29,7 @@ type
     actFontMinus: TAction;
     actFontReset: TAction;
     actEposta: TAction;
+    actRemoveDupes: TAction;
     actWordUnWrap: TAction;
     arcPassword: TAction;
     actTranslate: TAction;
@@ -58,6 +59,7 @@ type
     MenuItem15: TMenuItem;
     MenuItem16: TMenuItem;
     MenuItem17: TMenuItem;
+    MenuItem18: TMenuItem;
     N5: TMenuItem;
     N4: TMenuItem;
     MenuItem2: TMenuItem;
@@ -103,6 +105,7 @@ type
     procedure actFontResetExecute(Sender: TObject);
     procedure actPrintExecute(Sender: TObject);
     procedure actReloadExecute(Sender: TObject);
+    procedure actRemoveDupesExecute(Sender: TObject);
     procedure actSearchReplaceExecute(Sender: TObject);
     procedure actSortExecute(Sender: TObject);
     procedure actStatsExecute(Sender: TObject);
@@ -143,6 +146,8 @@ type
     procedure PopupMenu1Popup(Sender: TObject);
     procedure TxtChange(Sender: TObject);
     procedure txtClick(Sender: TObject);
+    procedure txtGutterClick(Sender: TObject; X, Y, Line: integer;
+      mark: TSynEditMark);
     procedure txtKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure txtKeyPress(Sender: TObject; var Key: char);
     procedure txtKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -371,6 +376,25 @@ begin
   frmIO:=frmDialog.edText.Text;
 end;
 
+// https://www.howtobuildsoftware.com/index.php/how-do/d4Y/delphi-listbox-duplicate-removal-how-to-remove-duplicates-in-listbox
+procedure RemoveDuplicates(StrList : TStringList);
+var   NoDuplicate: TStringList;
+      i: Integer;
+begin
+  NoDuplicate := TStringList.Create;
+  try
+    NoDuplicate.Sorted := True;
+    NoDuplicate.Duplicates := dupIgnore;
+    NoDuplicate.CaseSensitive := False;
+    for i := 0 to StrList.Count - 1 do
+    NoDuplicate.Add(StrList[i]) ;
+    NoDuplicate.Sorted:= False;
+    StrList.Assign(NoDuplicate) ;
+  finally
+    NoDuplicate.Free;
+  end;
+end;
+
 // *** *** *** ****************************************
 
 procedure TMainForm.LoadFile(s:string);
@@ -535,7 +559,8 @@ begin
   'CTRL+K - Statistika trenutne datoteke.'+#13#10+
   'CTRL+M - Označeno besedilo pošljemo v privzet epoštni program.'+#13#10+
   'CTRL + povleci in spusti mapo - Generira spisek vsebine.'+#13#10+
-  'CTRL+Q - Privzeto generira 12 (ali označeno številko 1 do 255) naključnih znakov.'
+  'CTRL+Q - Privzeto generira 12 (ali označeno številko 1 do 255) naključnih znakov.'+#13#10+
+  'CTRL+D - Odstranjevanje dvojnikov v izbranem besedilu.'
 
   );
   Txt.SetFocus;
@@ -598,6 +623,21 @@ begin
     try LoadFile(FileName);except end;
   end;
   Txt.SetFocus;
+end;
+
+procedure TMainForm.actRemoveDupesExecute(Sender: TObject);
+var StrList : TStringList;
+begin
+  if txt.SelText<>'' then begin
+    try
+      StrList:=TStringList.Create;
+      StrList.Text:=txt.SelText;
+      RemoveDuplicates(StrList);
+      txt.SelText:=StrList.Text;
+    finally
+      StrList.Free;
+    end;
+  end;
 end;
 
 procedure TMainForm.actSearchReplaceExecute(Sender: TObject);
@@ -1074,6 +1114,12 @@ end;
 procedure TMainForm.txtClick(Sender: TObject);
 begin
   WhereXY;
+end;
+
+procedure TMainForm.txtGutterClick(Sender: TObject; X, Y, Line: integer;
+  mark: TSynEditMark);
+begin
+  txt.SelectLine(true);
 end;
 
 procedure TMainForm.txtKeyDown(Sender: TObject; var Key: Word;
