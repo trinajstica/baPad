@@ -13,7 +13,7 @@ uses
   SynHighlighterPHP, SynCompletion, SynHighlighterPas, SynHighlighterHTML,
   SynHighlighterXML, SynHighlighterSQL, SynHighlighterVB, SynHighlighterBat,
   SynHighlighterIni, SynHighlighterMulti, SynHighlighterAny, TplFileSearchUnit,
-  SynUniHighlighter, PrintersDlgs, Printers, SourcePrinter, PasswordUnit, dialogunit, SynGutterBase, SynEditMarks;
+  SynUniHighlighter, PrintersDlgs, Printers, SourcePrinter, PasswordUnit, dialogunit, SynEditMarks;
 
 
 
