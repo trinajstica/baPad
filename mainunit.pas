@@ -1131,7 +1131,7 @@ end;
 procedure TMainForm.txtKeyPress(Sender: TObject; var Key: char);
 var tmp:string;
 begin
-   tmp:=txt.SelText;
+   tmp:=txt.SelText;if tmp='' then exit;
    case key of
      '(': begin
             txt.SelText:='('+tmp+')';key:=#00;
@@ -1156,6 +1156,12 @@ begin
           end;
      '''': begin
             txt.SelText:=''''+tmp+'''';key:=#00;
+          end;
+     '<': begin
+            txt.SelText:='<'+tmp+'>';key:=#00;
+          end;
+     '>': begin
+            txt.SelText:='<'+tmp+'>';key:=#00;
           end;
    end;
 end;
