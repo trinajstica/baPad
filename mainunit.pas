@@ -1172,4 +1172,9 @@ begin
   WhereXY;
 end;
 
+initialization
+   FormatSettings.DecimalSeparator:='.';
+   FormatSettings.ThousandSeparator:=',';
+
+
 end.

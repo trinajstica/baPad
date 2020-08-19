@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 449
+  Left = 608
   Height = 500
-  Top = 238
+  Top = 245
   Width = 750
   ActiveControl = txt
   AllowDropFiles = True
