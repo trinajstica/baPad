@@ -136,14 +136,14 @@ object MainForm: TMainForm
       Left = 481
       Height = 44
       Top = 1
-      Width = 119
+      Width = 138
       Align = alLeft
       BorderSpacing.Right = 2
       BorderSpacing.Bottom = 2
       BevelInner = bvRaised
       BevelOuter = bvNone
       ClientHeight = 44
-      ClientWidth = 119
+      ClientWidth = 138
       ParentColor = False
       ParentFont = False
       TabOrder = 5
@@ -152,7 +152,7 @@ object MainForm: TMainForm
         Height = 42
         Hint = 'Kriptiranje'#13#10'(uporabi Ctrl+R za ponovno nalaganja datoteke).'
         Top = 1
-        Width = 109
+        Width = 128
         Align = alClient
         BorderSpacing.Left = 8
         Caption = 'Kriptiranje'
@@ -532,7 +532,7 @@ object MainForm: TMainForm
     Title = 'Shrani datoteko'
     Filter = 'Vse datoteke|*.*|LCKED datoteke|*.lcked'
     Left = 416
-    Top = 72
+    Top = 73
   end
   object Parser1: TRLExpressionParser
     Left = 456
