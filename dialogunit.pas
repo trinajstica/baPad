@@ -16,6 +16,7 @@ type
     btnOk: TButton;
     edText: TEdit;
     lblText: TLabel;
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormShow(Sender: TObject);
   private
 
@@ -26,7 +27,7 @@ type
 var
   frmDialog: TfrmDialog;
 
-implementation
+implementation uses mainunit;
 
 {$R *.frm}
 
@@ -36,6 +37,11 @@ procedure TfrmDialog.FormShow(Sender: TObject);
 begin
   edText.SetFocus;
   edText.SelectAll;
+end;
+
+procedure TfrmDialog.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  ss:=edText.Text;
 end;
 
 end.

@@ -1,17 +1,18 @@
 object frmDialog: TfrmDialog
-  Left = 464
+  Left = 459
   Height = 125
-  Top = 248
+  Top = 242
   Width = 350
   ActiveControl = edText
   BorderStyle = bsDialog
   ClientHeight = 125
   ClientWidth = 350
   DesignTimePPI = 120
+  OnClose = FormClose
   OnShow = FormShow
   Position = poMainFormCenter
   ShowInTaskBar = stNever
-  LCLVersion = '7.1'
+  LCLVersion = '7.2'
   object lblText: TLabel
     Left = 10
     Height = 20
