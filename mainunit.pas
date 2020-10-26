@@ -30,6 +30,7 @@ type
     actFontMinus: TAction;
     actFontReset: TAction;
     actEposta: TAction;
+    actDatum: TAction;
     actRemoveDupes: TAction;
     actWordUnWrap: TAction;
     arcPassword: TAction;
@@ -100,6 +101,7 @@ type
     SynVBSyn1: TSynVBSyn;
     SynXMLSyn1: TSynXMLSyn;
     txt: TSynEdit;
+    procedure actDatumExecute(Sender: TObject);
     procedure actF3Execute(Sender: TObject);
     procedure actFontMinusExecute(Sender: TObject);
     procedure actFontPlusExecute(Sender: TObject);
@@ -561,7 +563,8 @@ begin
   'CTRL+M - Označeno besedilo pošljemo v privzet epoštni program.'+#13#10+
   'CTRL + povleci in spusti mapo - Generira spisek vsebine.'+#13#10+
   'CTRL+Q - Privzeto generira 12 (ali označeno številko 1 do 255) naključnih znakov.'+#13#10+
-  'CTRL+D - Odstranjevanje dvojnikov v izbranem besedilu.'
+  'CTRL+D - Odstranjevanje dvojnikov v izbranem besedilu.'+#13#10+
+  'Alt+D - Vstavi trenutni datum.'
 
   );
   Txt.SetFocus;
@@ -580,6 +583,11 @@ begin
     btnFindClick(Sender);
   end;
   Txt.SetFocus;
+end;
+
+procedure TMainForm.actDatumExecute(Sender: TObject);
+begin
+  txt.SelText:=DateToStr(now);
 end;
 
 procedure TMainForm.actFontMinusExecute(Sender: TObject);

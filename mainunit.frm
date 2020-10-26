@@ -653,6 +653,11 @@ object MainForm: TMainForm
       OnExecute = actRemoveDupesExecute
       ShortCut = 16452
     end
+    object actDatum: TAction
+      Caption = 'actDatum'
+      OnExecute = actDatumExecute
+      ShortCut = 32836
+    end
   end
   object DCP_rijndael1: TDCP_rijndael
     Id = 9
