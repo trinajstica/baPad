@@ -34,7 +34,7 @@ implementation
 
 procedure TfrmPassword.FormShow(Sender: TObject);
 begin
-  edPassword.SetFocus;
+  if Visible then edPassword.SetFocus;
 end;
 
 end.

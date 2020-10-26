@@ -1,7 +1,7 @@
 object frmPassword: TfrmPassword
-  Left = 464
+  Left = 459
   Height = 125
-  Top = 248
+  Top = 242
   Width = 350
   ActiveControl = edPassword
   BorderStyle = bsDialog
@@ -12,7 +12,7 @@ object frmPassword: TfrmPassword
   OnShow = FormShow
   Position = poMainFormCenter
   ShowInTaskBar = stNever
-  LCLVersion = '7.1'
+  LCLVersion = '7.2'
   object lblPassword: TLabel
     Left = 10
     Height = 20

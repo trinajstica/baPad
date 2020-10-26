@@ -42,8 +42,10 @@ end;
 
 procedure TfrmSearchReplace.FormShow(Sender: TObject);
 begin
-  edtPoisci.SetFocus;
-  edtPoisci.SelectAll;
+  if visible then begin
+    edtPoisci.SetFocus;
+    edtPoisci.SelectAll;
+  end;
 end;
 
 end.

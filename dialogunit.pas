@@ -35,8 +35,10 @@ implementation uses mainunit;
 
 procedure TfrmDialog.FormShow(Sender: TObject);
 begin
-  edText.SetFocus;
-  edText.SelectAll;
+  if visible then begin
+    edText.SetFocus;
+    edText.SelectAll;
+  end;
 end;
 
 procedure TfrmDialog.FormClose(Sender: TObject; var CloseAction: TCloseAction);

@@ -10,7 +10,8 @@
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="3" Y="11"/>
+        <TopLine Value="4"/>
+        <CursorPos X="30" Y="22"/>
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit>
@@ -21,7 +22,6 @@
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="551"/>
         <CursorPos X="27" Y="559"/>
         <UsageCount Value="38"/>
@@ -35,10 +35,11 @@
         <ComponentName Value="frmSearchReplace"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="25"/>
-        <CursorPos X="23" Y="46"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="28"/>
+        <CursorPos X="3" Y="14"/>
         <UsageCount Value="38"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="message.pas"/>
@@ -47,8 +48,11 @@
         <ComponentName Value="frmMessage"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="3"/>
+        <CursorPos X="3" Y="14"/>
         <UsageCount Value="38"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="sourceprinter.pas"/>
@@ -63,10 +67,12 @@
         <ComponentName Value="frmPassword"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="14"/>
-        <CursorPos X="3" Y="27"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="18"/>
+        <CursorPos X="19" Y="37"/>
         <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="dialogunit.pas"/>
@@ -75,10 +81,12 @@
         <ComponentName Value="frmDialog"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="14"/>
-        <CursorPos X="30" Y="30"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="26"/>
+        <CursorPos X="32" Y="38"/>
         <UsageCount Value="23"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\typhon\components\pl_ExSystem\source\TplFileSearchUnit.pas"/>
@@ -156,11 +164,7 @@
         <UsageCount Value="10"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="26">
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="887" Column="10" TopLine="873"/>
-      </Position>
+    <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="mainunit.pas"/>
       </Position>
@@ -262,6 +266,22 @@
       <Position>
         <Filename Value="mainunit.pas"/>
         <Caret Line="588" Column="11" TopLine="577"/>
+      </Position>
+      <Position>
+        <Filename Value="bapad.ppr"/>
+        <Caret Line="23" Column="36" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="bapad.ppr"/>
+        <Caret Line="24" Column="36" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="bapad.ppr"/>
+        <Caret Line="25" Column="30" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="bapad.ppr"/>
+        <Caret Line="22" Column="30" TopLine="4"/>
       </Position>
     </JumpHistory>
     <RunParams>
