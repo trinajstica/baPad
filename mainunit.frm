@@ -164,8 +164,8 @@ object MainForm: TMainForm
   end
   object bar: TStatusBar
     Left = 0
-    Height = 29
-    Top = 471
+    Height = 24
+    Top = 476
     Width = 750
     Panels = <    
       item
@@ -181,7 +181,7 @@ object MainForm: TMainForm
   end
   inline txt: TSynEdit
     Left = 0
-    Height = 421
+    Height = 426
     Top = 50
     Width = 750
     Align = alClient
@@ -657,6 +657,11 @@ object MainForm: TMainForm
       Caption = 'actDatum'
       OnExecute = actDatumExecute
       ShortCut = 32836
+    end
+    object ActRemoveLines: TAction
+      Caption = 'ActRemoveLines'
+      OnExecute = ActRemoveLinesExecute
+      ShortCut = 32850
     end
   end
   object DCP_rijndael1: TDCP_rijndael

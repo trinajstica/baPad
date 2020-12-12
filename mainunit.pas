@@ -31,6 +31,7 @@ type
     actFontReset: TAction;
     actEposta: TAction;
     actDatum: TAction;
+    ActRemoveLines: TAction;
     actRemoveDupes: TAction;
     actWordUnWrap: TAction;
     arcPassword: TAction;
@@ -109,6 +110,7 @@ type
     procedure actPrintExecute(Sender: TObject);
     procedure actReloadExecute(Sender: TObject);
     procedure actRemoveDupesExecute(Sender: TObject);
+    procedure ActRemoveLinesExecute(Sender: TObject);
     procedure actSearchReplaceExecute(Sender: TObject);
     procedure actSortExecute(Sender: TObject);
     procedure actStatsExecute(Sender: TObject);
@@ -175,6 +177,7 @@ const version:string='baPad v1.0, © BArko, 2020';
       ss:string='';
       pw:string='';
       seltext:string='';
+      LTotmp:string='';
 
       TLowerAlpha = 'abcdefghijklmnopqrstuvwxyz';
       TUpperAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -564,7 +567,8 @@ begin
   'CTRL + povleci in spusti mapo - Generira spisek vsebine.'+#13#10+
   'CTRL+Q - Privzeto generira 12 (ali označeno številko 1 do 255) naključnih znakov.'+#13#10+
   'CTRL+D - Odstranjevanje dvojnikov v izbranem besedilu.'+#13#10+
-  'Alt+D - Vstavi trenutni datum.'
+  'Alt+D - Vstavi trenutni datum.'+#13#10+
+  'Alt+R - Odstrani vse vrstice, ki vsebujejo označeno besedilo.'
 
   );
   Txt.SetFocus;
@@ -647,6 +651,37 @@ begin
       StrList.Free;
     end;
   end;
+end;
+
+procedure TMainForm.ActRemoveLinesExecute(Sender: TObject);
+var tmp:string;
+    i:integer;
+    t:tSynEdit;
+    label start;
+begin // grda rešitev, predelaj (s tem ne deluje REDO)
+  if txt.SelText<>'' then begin
+    tmp:=txt.SelText;
+    t:=tSynEdit.Create(self);
+    try
+      t.Lines.Text:=txt.Lines.Text;
+      // varovalka, če si premisliš, ctrl+a in ctrl+v dobiš vse nazaj
+      txt.SelectAll;
+      txt.CutToClipboard;
+      start:
+      for i:=0 to t.Lines.Count-1 do
+      begin
+        if t.lines[i].Contains(tmp) then begin
+          t.Lines.Delete(i);goto start;
+        end;
+      end;
+      txt.Lines.beginupdate;
+      txt.Lines.Text:=t.Lines.text;
+      txt.Lines.endupdate;
+    finally
+      t.free;
+    end;
+  end;
+  Txt.SetFocus;
 end;
 
 procedure TMainForm.actSearchReplaceExecute(Sender: TObject);
@@ -921,8 +956,8 @@ begin
 
   SynMarkup := TSynEditMarkupHighlightAllCaret(txt.MarkupByClass[TSynEditMarkupHighlightAllCaret]);
 
-  SynMarkup.MarkupInfo.FrameColor := clSilver;
-  SynMarkup.MarkupInfo.Background := clGray;
+  SynMarkup.MarkupInfo.FrameColor := clMoneyGreen; //clSilver
+  SynMarkup.MarkupInfo.Background := clSkyBlue;    //clGray
 
   SynMarkup.WaitTime := 100;
   SynMarkup.Trim := True;
@@ -991,8 +1026,10 @@ end;
 procedure TMainForm.MenuItem13Click(Sender: TObject);
 var LTo:string;
 begin
+  LTo:=LTotmp;
   if InputQuery2('Prevajanje','V jezik (en,sl,de,ipd.) :',LTo)=mrOk then
   begin
+    LTotmp:=LTo;
     OpenURL('https://translate.google.com/#view=home&op=translate&sl=auto&tl='+LTo+'&text='+UrlEncode(txt.SelText));
   end;
   Txt.SetFocus;
