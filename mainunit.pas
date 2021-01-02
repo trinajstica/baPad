@@ -173,7 +173,7 @@ var
   SynMarkup: TSynEditMarkupHighlightAllCaret;
   rChar: integer;
 
-const version:string='baPad v1.0, © BArko, 2020';
+const version:string='baPad v1.0, © BArko, 2020-2021';
       ss:string='';
       pw:string='';
       seltext:string='';

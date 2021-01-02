@@ -164,8 +164,8 @@ object MainForm: TMainForm
   end
   object bar: TStatusBar
     Left = 0
-    Height = 24
-    Top = 476
+    Height = 29
+    Top = 471
     Width = 750
     Panels = <    
       item
@@ -181,7 +181,7 @@ object MainForm: TMainForm
   end
   inline txt: TSynEdit
     Left = 0
-    Height = 426
+    Height = 421
     Top = 50
     Width = 750
     Align = alClient

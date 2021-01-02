@@ -3,7 +3,7 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="12"/>
-    <BuildModes Active="Linux64"/>
+    <BuildModes Active="Win64"/>
     <Units>
       <Unit>
         <Filename Value="bapad.ppr"/>
@@ -22,8 +22,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="947"/>
-        <CursorPos X="34" Y="961"/>
+        <TopLine Value="165"/>
+        <CursorPos X="18" Y="174"/>
         <UsageCount Value="41"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -272,11 +272,11 @@
       </Position>
       <Position>
         <Filename Value="mainunit.pas"/>
-        <Caret Line="180" Column="24" TopLine="252"/>
+        <Caret Line="959" Column="49" TopLine="951"/>
       </Position>
       <Position>
         <Filename Value="mainunit.pas"/>
-        <Caret Line="959" Column="49" TopLine="951"/>
+        <Caret Line="3" Column="6"/>
       </Position>
     </JumpHistory>
     <RunParams>
