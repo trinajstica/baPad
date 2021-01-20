@@ -663,6 +663,11 @@ object MainForm: TMainForm
       OnExecute = ActRemoveLinesExecute
       ShortCut = 32850
     end
+    object ActCountWords: TAction
+      Caption = 'ActCountWords'
+      OnExecute = ActCountWordsExecute
+      ShortCut = 32855
+    end
   end
   object DCP_rijndael1: TDCP_rijndael
     Id = 9

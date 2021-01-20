@@ -31,6 +31,7 @@ type
     actFontReset: TAction;
     actEposta: TAction;
     actDatum: TAction;
+    ActCountWords: TAction;
     ActRemoveLines: TAction;
     actRemoveDupes: TAction;
     actWordUnWrap: TAction;
@@ -102,6 +103,7 @@ type
     SynVBSyn1: TSynVBSyn;
     SynXMLSyn1: TSynXMLSyn;
     txt: TSynEdit;
+    procedure ActCountWordsExecute(Sender: TObject);
     procedure actDatumExecute(Sender: TObject);
     procedure actF3Execute(Sender: TObject);
     procedure actFontMinusExecute(Sender: TObject);
@@ -568,8 +570,8 @@ begin
   'CTRL+Q - Privzeto generira 12 (ali označeno številko 1 do 255) naključnih znakov.'+#13#10+
   'CTRL+D - Odstranjevanje dvojnikov v izbranem besedilu.'+#13#10+
   'Alt+D - Vstavi trenutni datum.'+#13#10+
-  'Alt+R - Odstrani vse vrstice, ki vsebujejo označeno besedilo.'
-
+  'Alt+R - Odstrani vse vrstice, ki vsebujejo označeno besedilo.'+#13#10+
+  'Alt+W - Število označenih besed.'
   );
   Txt.SetFocus;
 end;
@@ -592,6 +594,31 @@ end;
 procedure TMainForm.actDatumExecute(Sender: TObject);
 begin
   txt.SelText:=DateToStr(now);
+end;
+
+procedure TMainForm.ActCountWordsExecute(Sender: TObject);
+
+  function UnWrap(sss:string):string;
+  var s:tstringlist;
+      tmp:string;
+      i:integer;
+  begin
+    s:=TStringlist.Create;
+    s.text:=sss; tmp:='';
+    for i:=0 to s.Count-1 do
+    begin
+      tmp:=tmp+s[i]+' ';
+    end;
+    s.Free;
+    result:=trim(tmp);
+  end;
+
+var s:string;
+begin
+  s:=txt.SelText;
+  if s<>'' then begin
+    ShowMessage('Število besed: '+IntToStr(WordCount(UnWrap(s),[' '])));
+  end;
 end;
 
 procedure TMainForm.actFontMinusExecute(Sender: TObject);
