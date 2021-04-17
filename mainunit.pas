@@ -832,7 +832,7 @@ end;
 
 procedure TMainForm.btnDonateClick(Sender: TObject);
 begin
-  OpenURL(baDecrypt('','1XWKpxjtoavoKU2dPBTCCsqZe3SDyTyHTOVnI95nIxzd/lMPr8+42DGS32Y6xmEAQMTqxWs5toVn1BE5y8mL62XHpwqD/0DGXya4oFSicdFehA1AikxdMU8jS3IP'));
+  OpenURL('https://www.paypal.com/donate?hosted_button_id=4BS9ZUXJ2P7GN');
   Txt.SetFocus;
 end;
 

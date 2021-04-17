@@ -9,10 +9,10 @@
         <Filename Value="bapad.ppr"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
         <TopLine Value="4"/>
-        <CursorPos X="30" Y="22"/>
+        <CursorPos X="30" Y="14"/>
         <UsageCount Value="42"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="mainunit.pas"/>
@@ -22,8 +22,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="605"/>
-        <CursorPos X="45" Y="623"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="815"/>
+        <CursorPos X="75" Y="835"/>
         <UsageCount Value="42"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -161,136 +162,24 @@
         <Filename Value="C:\codetyphon\fpcsrc\packages\rtl-objpas\src\inc\strutils.pp"/>
         <FRMtype Value="0"/>
         <UnitName Value="StrUtils"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="186"/>
         <CursorPos X="10" Y="198"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\sysstrh.inc"/>
         <FRMtype Value="0"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="265"/>
         <CursorPos X="3" Y="277"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="28">
+    <JumpHistory>
       <Position>
         <Filename Value="mainunit.pas"/>
-        <Caret Line="168" Column="22" TopLine="165"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="170" Column="22" TopLine="167"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="601" Column="19" TopLine="586"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="703" Column="26" TopLine="683"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="704" Column="47" TopLine="684"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="711" Column="17" TopLine="691"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="760" TopLine="737"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="602" Column="59" TopLine="590"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\codetyphon\fpcsrc\packages\rtl-objpas\src\inc\strutils.pp"/>
-        <Caret Line="198" Column="10" TopLine="186"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="602" Column="18" TopLine="590"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="762" TopLine="761"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="619" Column="2" TopLine="599"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="620" Column="23" TopLine="607"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="531" Column="71" TopLine="511"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="550" Column="46" TopLine="539"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="557" Column="36" TopLine="539"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="558" Column="38" TopLine="539"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="549" Column="16" TopLine="549"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="550" Column="46" TopLine="545"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="557" Column="36" TopLine="545"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="558" Column="38" TopLine="545"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="562" Column="40" TopLine="545"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="563" Column="44" TopLine="545"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="565" Column="44" TopLine="545"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="568" Column="28" TopLine="549"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="571" Column="54" TopLine="552"/>
-      </Position>
-      <Position>
-        <Filename Value="mainunit.pas"/>
-        <Caret Line="574" Column="39" TopLine="574"/>
+        <Caret Line="623" Column="45" TopLine="605"/>
       </Position>
     </JumpHistory>
     <RunParams>
