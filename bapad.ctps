@@ -9,6 +9,8 @@
         <Filename Value="bapad.ppr"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="4"/>
         <CursorPos X="30" Y="14"/>
         <UsageCount Value="42"/>
@@ -23,8 +25,9 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="687"/>
-        <CursorPos X="29" Y="701"/>
+        <CursorPos X="34" Y="698"/>
         <UsageCount Value="42"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -37,6 +40,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="28"/>
         <CursorPos X="3" Y="14"/>
         <UsageCount Value="42"/>
@@ -49,6 +53,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="3"/>
         <CursorPos X="3" Y="14"/>
         <UsageCount Value="42"/>
@@ -57,6 +62,8 @@
         <Filename Value="sourceprinter.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SourcePrinter"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
         <UsageCount Value="42"/>
       </Unit>
       <Unit>
@@ -67,6 +74,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="18"/>
         <CursorPos X="19" Y="37"/>
         <UsageCount Value="27"/>
@@ -79,6 +87,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="26"/>
         <CursorPos X="32" Y="38"/>
         <UsageCount Value="27"/>
@@ -87,6 +96,7 @@
         <Filename Value="C:\codetyphon\typhon\components\pl_ExSystem\source\TplFileSearchUnit.pas"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <CursorPos Y="48"/>
         <UsageCount Value="10"/>
       </Unit>
@@ -94,6 +104,7 @@
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\classes\classesh.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="94"/>
         <CursorPos X="44" Y="101"/>
         <UsageCount Value="10"/>
@@ -103,6 +114,7 @@
         <FRMtype Value="0"/>
         <UnitName Value="SynEditTypes"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="86"/>
         <CursorPos X="16" Y="89"/>
         <UsageCount Value="11"/>
@@ -112,6 +124,7 @@
         <FRMtype Value="0"/>
         <HasResources Value="True"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="220"/>
         <CursorPos X="5" Y="163"/>
         <UsageCount Value="10"/>
@@ -121,6 +134,7 @@
         <FRMtype Value="0"/>
         <UnitName Value="Gtk2CellRenderer"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="16"/>
         <CursorPos X="3" Y="30"/>
         <UsageCount Value="10"/>
@@ -130,6 +144,7 @@
         <FRMtype Value="0"/>
         <UnitName Value="Dialogs"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="748"/>
         <CursorPos X="106" Y="762"/>
         <UsageCount Value="10"/>
@@ -138,6 +153,7 @@
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\sysinth.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="28"/>
         <CursorPos X="3" Y="137"/>
         <UsageCount Value="10"/>
@@ -147,6 +163,7 @@
         <FRMtype Value="0"/>
         <UnitName Value="RLParser"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <CursorPos X="14" Y="12"/>
         <UsageCount Value="10"/>
       </Unit>
@@ -154,6 +171,7 @@
         <Filename Value="ParseClass.pas"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="343"/>
         <CursorPos X="26" Y="355"/>
         <UsageCount Value="10"/>
@@ -163,6 +181,7 @@
         <FRMtype Value="0"/>
         <UnitName Value="StrUtils"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="186"/>
         <CursorPos X="10" Y="198"/>
         <UsageCount Value="10"/>
@@ -171,6 +190,7 @@
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\sysstrh.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
         <TopLine Value="265"/>
         <CursorPos X="3" Y="277"/>
         <UsageCount Value="10"/>

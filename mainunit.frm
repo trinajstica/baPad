@@ -21,7 +21,7 @@ object MainForm: TMainForm
   OnShow = FormShow
   Position = poScreenCenter
   SessionProperties = 'Height;Left;Top;txt.Font;Width'
-  LCLVersion = '7.3'
+  LCLVersion = '7.4'
   object Panel: TPanel
     Left = 1
     Height = 48
@@ -480,10 +480,6 @@ object MainForm: TMainForm
     SelectedColor.ItalicPriority = 50
     SelectedColor.UnderlinePriority = 50
     SelectedColor.StrikeOutPriority = 50
-    ScrollOnEditLeftOptions.ScrollExtraPercent = 20
-    ScrollOnEditLeftOptions.ScrollExtraMax = 10
-    ScrollOnEditRightOptions.ScrollExtraPercent = 30
-    ScrollOnEditRightOptions.ScrollExtraMax = 25
     BracketHighlightStyle = sbhsBoth
     BracketMatchColor.Background = clNone
     BracketMatchColor.Foreground = clNone
