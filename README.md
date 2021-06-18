@@ -27,7 +27,7 @@ baPad - zelo preprost urejevalnik besedilnih datotek z različnimi dodatki:
 
 Prenos izvršnih datotek:
 
-Za Windows 32 bit - <a href="bin/bapad32.exe">prenos</a><br>
+Za Windows 32 bit - <a href="bin/bapad32.exe">prenos (<b>opuščeno</b>)</a><br>
 Za Windows 64 bit - <a href="bin/bapad64.exe">prenos</a><br>
 Za Linux 64 bit - <a href="bin/bapad64">prenos</a><br>
 
